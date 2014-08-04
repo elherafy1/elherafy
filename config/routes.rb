@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :workers
+
   get '/orders' => 'orders#orders'
 
   # The priority is based upon order of creation: first created -> highest priority.
