@@ -49,3 +49,5 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'bootstrap-sass'
 gem 'will_paginate'
+gem 'bcrypt', '~> 3.1.7'
+
