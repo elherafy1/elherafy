@@ -1,0 +1,91 @@
+<div class="jumbotron">
+      <div class="container">
+        <div class="row">
+        	<title>Review</title>
+<body> 
+	<%= form_for :review do |f| %>
+
+	<p>
+		<div class="col-sm-5">
+		<strong class="choice">price rating</strong>
+		</div>
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :price, 1 %><i></i>
+		<%= f.radio_button :price, 2 %><i></i>
+		<%= f.radio_button :price, 3 %><i></i>
+		<%= f.radio_button :price, 4 %><i></i>
+		<%= f.radio_button :price, 5 %><i></i>
+	</span>
+
+
+	</div>
+	</p>
+	<p>
+		<div class="col-sm-5">
+		<strong class="choice">cleanness rating</strong>
+		</div>
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :clean, 1 %><i></i>
+		<%= f.radio_button :clean, 2 %><i></i>
+		<%= f.radio_button :clean, 3 %><i></i>
+		<%= f.radio_button :clean, 4 %><i></i>
+		<%= f.radio_button :clean, 5 %><i></i>
+	</span>
+	</div>
+	</p>
+		<p>
+			<div class="col-sm-5">
+		<strong class="choice">quality rating</strong>
+		</div>
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :quilty, 1 %><i></i>
+		<%= f.radio_button :quilty, 2 %><i></i>
+		<%= f.radio_button :quilty, 3 %><i></i>
+		<%= f.radio_button :quilty, 4 %><i></i>
+		<%= f.radio_button :quilty, 5 %><i></i>
+	</span>
+	</div>
+	</p>
+		<p>
+			<div class="col-sm-5">
+		<strong class="choice">disicpline rating</strong>
+		</div>
+				<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :disicpline, 1 %><i></i>
+		<%= f.radio_button :disicpline, 2 %><i></i>
+		<%= f.radio_button :disicpline, 3 %><i></i>
+		<%= f.radio_button :disicpline, 4 %><i></i>
+		<%= f.radio_button :disicpline, 5 %><i></i>
+	</span>
+	</div>
+	</p>
+		<p>
+			<div class="col-sm-5">
+		<strong class="choice">treatment rating</strong>
+		</div>
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :treatment, 1 %><i></i>
+		<%= f.radio_button :treatment, 2 %><i></i>
+		<%= f.radio_button :treatment, 3 %><i></i>
+		<%= f.radio_button :treatment, 4 %><i></i>
+		<%= f.radio_button :treatment, 5 %><i></i>
+	</span>
+	</div>
+	</p>
+
+	<div class="col-sm-5">
+
+	<%= f.submit  "Send my review", :class => "btn btn-primary" %>
+
+	</div>
+
+	<% end %> 
+	
+		</body></html>
+        </div>
+      </div>

@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :workers
+  resources :reviews
 
+  get "reviews/new"
+  post "reviews/create"
+  get '/order' => "elherafy#order"
   
 
   # The priority is based upon order of creation: first created -> highest priority.
