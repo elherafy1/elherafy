@@ -1,13 +1,18 @@
 class ReviewsController < ApplicationController
 
+	before_filter :set_worker
 
 	def new
-		#@review = Review.new
+		@review = @worker.reviews.build
+	end
+
+	def show
+		
 	end
 
 
 	def create
-		@review = Review.new(review_params)
+		@review = @worker.reviews.build(review_params)
 
 		if @review.save
 			flash[:success] = "Review sent"
@@ -27,4 +32,7 @@ class ReviewsController < ApplicationController
       params.require(:review).permit(:price, :clean, :quilty, :disicpline, :treatment)
     end
 
+    def set_worker
+    	@worker= Worker.find(params[:worker_id])
+    end
 end

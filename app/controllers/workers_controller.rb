@@ -5,16 +5,20 @@ class WorkersController < ApplicationController
   # GET /workers.json
   def index
     @workers = Worker.all
+
+
   end
 
   # GET /workers/1
   # GET /workers/1.json
   def show
+    @reviews = @worker.reviews.paginate(page: params[:page])
   end
 
   # GET /workers/new
   def new
     @worker = Worker.new
+    @worker.reviews.build
   end
 
   # GET /workers/1/edit
@@ -31,6 +35,7 @@ class WorkersController < ApplicationController
         format.html { redirect_to @worker, notice: 'Worker was successfully created.' }
         format.json { render :show, status: :created, location: @worker }
       else
+        @worker.reviews.build if @worker.reviews.empty?
         format.html { render :new }
         format.json { render json: @worker.errors, status: :unprocessable_entity }
       end
@@ -61,6 +66,10 @@ class WorkersController < ApplicationController
     end
   end
 
+  def review
+    @worker = Worker.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_worker
@@ -69,6 +78,8 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :area, :status)
+      params.require(:worker).permit(:name, :area, :status, :kind, :reviews_attributes => [:price, :clean, :quilty, :disicpline, :treatment])
     end
+
+
 end

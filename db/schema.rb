@@ -19,14 +19,18 @@ ActiveRecord::Schema.define(version: 20140805123611) do
     t.integer  "quilty"
     t.integer  "disicpline"
     t.integer  "treatment"
+    t.integer  "worker_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "reviews", ["worker_id", "created_at"], name: "index_reviews_on_worker_id_and_created_at"
 
   create_table "workers", force: true do |t|
     t.string   "name"
     t.string   "area"
     t.string   "status"
+    t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -23,6 +23,92 @@
     <%= f.label :status %><br>
     <%= f.text_field :status %>
   </div>
+  <div class="field">
+    <%= f.label :kind %><br>
+    <%= f.text_field :kind %>
+  </div>
+
+<% if f.object.new_record? %>
+  <%= f.fields_for :reviews do |review| %>
+    
+  <p>
+    <div class="col-sm-5">
+    <strong class="choice">price rating</strong>
+    </div>
+    <div class="col-sm-7">
+  <span class="star-rating">
+    <%= review.radio_button :price, 1 %><i></i>
+    <%= review.radio_button :price, 2 %><i></i>
+    <%= review.radio_button :price, 3 %><i></i>
+    <%= review.radio_button :price, 4 %><i></i>
+    <%= review.radio_button :price, 5 %><i></i>
+  </span>
+
+
+  </div>
+  </p>
+  <p>
+    <div class="col-sm-5">
+    <strong class="choice">cleanness rating</strong>
+    </div>
+    <div class="col-sm-7">
+  <span class="star-rating">
+    <%= review.radio_button :clean, 1 %><i></i>
+    <%= review.radio_button :clean, 2 %><i></i>
+    <%= review.radio_button :clean, 3 %><i></i>
+    <%= review.radio_button :clean, 4 %><i></i>
+    <%= review.radio_button :clean, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+    <p>
+      <div class="col-sm-5">
+    <strong class="choice">quality rating</strong>
+    </div>
+    <div class="col-sm-7">
+  <span class="star-rating">
+    <%= review.radio_button :quilty, 1 %><i></i>
+    <%= review.radio_button :quilty, 2 %><i></i>
+    <%= review.radio_button :quilty, 3 %><i></i>
+    <%= review.radio_button :quilty, 4 %><i></i>
+    <%= review.radio_button :quilty, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+    <p>
+      <div class="col-sm-5">
+    <strong class="choice">disicpline rating</strong>
+    </div>
+        <div class="col-sm-7">
+  <span class="star-rating">
+    <%= review.radio_button :disicpline, 1 %><i></i>
+    <%= review.radio_button :disicpline, 2 %><i></i>
+    <%= review.radio_button :disicpline, 3 %><i></i>
+    <%= review.radio_button :disicpline, 4 %><i></i>
+    <%= review.radio_button :disicpline, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+    <p>
+      <div class="col-sm-5">
+    <strong class="choice">treatment rating</strong>
+    </div>
+    <div class="col-sm-7">
+  <span class="star-rating">
+    <%= review.radio_button :treatment, 1 %><i></i>
+    <%= review.radio_button :treatment, 2 %><i></i>
+    <%= review.radio_button :treatment, 3 %><i></i>
+    <%= review.radio_button :treatment, 4 %><i></i>
+    <%= review.radio_button :treatment, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+
+  
+  <% end %>
+<% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

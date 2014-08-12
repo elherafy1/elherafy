@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <meta charset="utf-8">
+                    <title>list of mabalat workers </title>
+                </div>
+            </div>
+        </div>
+    </head>
+    <body>
+        <p>Workers:</p>
+       
+        <ul>
+            <% @workers.each do |worker| %>
+                <li><%= worker.name %></li>
+            <% end %>
+        </ul>
+    </body>
+    </html>

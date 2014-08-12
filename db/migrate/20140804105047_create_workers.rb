@@ -4,6 +4,7 @@ class CreateWorkers < ActiveRecord::Migration
       t.string :name
       t.string :area
       t.string :status
+      t.string :kind
 
       t.timestamps
     end

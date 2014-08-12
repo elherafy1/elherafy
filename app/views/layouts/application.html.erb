@@ -22,10 +22,24 @@
 		</button><%= link_to "Home" , root_path , :class => 'navbar-brand' %>
 		</div>
 		<div class="navbar-collapse collapse">
+			<nav>
 		<ul class="nav navbar-nav">
 
 			<li><%= link_to "About Us" , '#' %></li>
 			<li><%= link_to "Contact Us" , '#' %></li>
+			<li id="fat-menu" class="dropdown">
+					            <a herf="#" class="dropdown-toggle" data-toggle="dropdown">
+						          Services <b class="caret"></b>
+					            </a>
+					            <ul class="dropdown-menu">
+						            <li><%= link_to "mabalat", mabalat_path(:worker_type => 'mabalat') %> </li>
+						            <li><%= link_to "naggar", mabalat_path(:worker_type => 'naggar') %> </li>
+						            <li><%= link_to "Sign out", root_path , method: "delete" %></li>
+							    </ul> 
+					        </li>
+					    </ul>
+	                </nav>
+
 		</ul>
 	</div>
 </div>
