@@ -7,6 +7,7 @@
 </head>
 <body>
 
+<title>ELherafy</title>
 
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
@@ -34,6 +35,8 @@
 					            <ul class="dropdown-menu">
 						            <li><%= link_to "mabalat", mabalat_path(:worker_type => 'mabalat') %> </li>
 						            <li><%= link_to "naggar", mabalat_path(:worker_type => 'naggar') %> </li>
+						            <li><%= link_to "Workers", workers_path %></li>
+						            <li><%= link_to "New worker", new_worker_path %></li>
 						            <li><%= link_to "Sign out", root_path , method: "delete" %></li>
 							    </ul> 
 					        </li>
@@ -46,9 +49,7 @@
 </div>
 
 
-		<% flash.each do |key, value|%>
-			<div class="alert alert-<%= key %>"><%= value %></div>  
-		<% end %>
+
 
 
 

@@ -14,14 +14,13 @@ class ReviewsController < ApplicationController
 	def create
 		@review = @worker.reviews.build(review_params)
 
+	respond_to do |format|
 		if @review.save
-			flash[:success] = "Review sent"
-			puts "in create action"
-			puts "flash is #{flash}"
-			redirect_to workers_path
+			format.html { redirect_to workers_path, notice: 'Review was sent.' }
 		else
-			puts "unsuccessful"
+			format.html { redirect_to workers_path, notice: 'Review agian please.' }
 		end
+	end
 		
 			#redirect_to :back
 	end

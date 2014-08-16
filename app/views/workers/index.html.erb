@@ -5,20 +5,14 @@
 <body> 
 <h1>Listing workers</h1>
 
-<table>
-  <thead>
-    <tr>
-        <th>Name</th>
-        <th>Area</th>
-        <th>Status</th>
-        <th>Kind</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
 
   <tbody>
+    <br>
+
     <% @workers.each do |worker| %>
       <tr>
+        <div class="col-sm-7">
         <% if worker.average_rate > 20 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif worker.average_rate > 15 && worker.average_rate <= 20%>
@@ -29,23 +23,26 @@
           <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
         <% end %>
 
+
         <td><%= worker.name %></td>
         <td><%= worker.area %></td>
         <td><%= worker.status %></td>
         <td><%= worker.kind %></td>
+        </div>
+        <div class="col-sm-14">
         <td><%= link_to 'Show', worker %></td>
         <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
         <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'review', new_worker_review_path(worker) %></td>
-      </tr>
+        </div>
+      </tr><br>
     <% end %>
   </tbody>
-</table>
+
+
 
 <br>
-
-<%= link_to 'New Worker', new_worker_path %>
-
+ 
     </body></html>
         </div>
       </div>
