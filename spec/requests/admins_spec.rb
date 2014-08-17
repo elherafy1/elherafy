@@ -20,7 +20,9 @@ RSpec.describe "Admins", :type => :request do
   	end
 		end
 		describe "with invalid info" do
-		  before { click_button "Save changes" }
+		  before { 
+		    fill_in "Name", with: ""
+		  	click_button "Save changes" }
 		  it { should have_content('error') }
 
 		end
@@ -35,10 +37,7 @@ RSpec.describe "Admins", :type => :request do
 				fill_in "Status", with: new_status
 			    click_button "Save changes"
 			end
-						  	it "should have  title" do
-  		expect(page).to have_title(new_name)
-  	end
-  	it { should have_link('Sign out', href: signout_path) }
+
   	it { should have_selector('div.alert.alert-success') }
   	specify { worker.reload.name.should == new_name }
   	specify { worker.reload.area.should == new_area }
