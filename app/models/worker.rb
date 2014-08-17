@@ -1,9 +1,11 @@
 class Worker < ActiveRecord::Base
 	validates :name, presence: true
+	validates :phone, presence: true
 	validates :area, presence: true
 	validates :status, presence: true
 	validates :kind, presence: true
 	has_many :reviews, :dependent => :destroy
+	has_many :comments, :dependent => :destroy
 
 	validates_presence_of :reviews
 	validates_associated :reviews
@@ -32,6 +34,10 @@ class Worker < ActiveRecord::Base
 	end
 	def average_treatment
 		treatment_rate = Review.where(:worker_id => self.id).average(:treatment)
+	end
+
+	def get_comments
+		Review.where(:worker_id => self.id)
 	end
 
 end

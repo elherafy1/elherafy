@@ -23,17 +23,22 @@
           <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
         <% end %>
 
-
-        <td><%= worker.name %></td>
+        <strong>
+        <td><%= worker.name %></td><br>
+        </strong>
+        <td><%= worker.phone %></td>
         <td><%= worker.area %></td>
         <td><%= worker.status %></td>
         <td><%= worker.kind %></td>
+        
         </div>
-        <div class="col-sm-14">
+        <div class="col-sm-12">
+          <body link="blue">
         <td><%= link_to 'Show', worker %></td>
         <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
         <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'review', new_worker_review_path(worker) %></td>
+          </body>
         </div>
       </tr><br>
     <% end %>

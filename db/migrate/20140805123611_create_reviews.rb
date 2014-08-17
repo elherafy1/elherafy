@@ -6,10 +6,10 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :quilty
       t.integer :disicpline
       t.integer :treatment
+      t.string :comment
       t.integer :worker_id
 
       t.timestamps
     end
-    add_index :reviews, [:worker_id, :created_at]
   end
 end

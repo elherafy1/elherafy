@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
 		if @review.save
 			format.html { redirect_to workers_path, notice: 'Review was sent.' }
 		else
-			format.html { redirect_to workers_path, notice: 'Review agian please.' }
+			format.html { render :new }
 		end
 	end
 		
@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
 	private
 
 	def review_params
-      params.require(:review).permit(:price, :clean, :quilty, :disicpline, :treatment)
+      params.require(:review).permit(:price, :clean, :quilty, :disicpline, :treatment, :comment)
     end
 
     def set_worker

@@ -70,6 +70,10 @@ class WorkersController < ApplicationController
     @worker = Worker.find(params[:id])
   end
 
+  def comment
+    @worker = Worker.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_worker
@@ -78,7 +82,7 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :area, :status, :kind, :reviews_attributes => [:price, :clean, :quilty, :disicpline, :treatment])
+      params.require(:worker).permit(:name, :phone, :area, :status, :kind, :reviews_attributes => [:price, :clean, :quilty, :disicpline, :treatment, :comment])
     end
 
 

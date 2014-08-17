@@ -24,6 +24,21 @@
   <strong>kind:</strong>
   <%= @worker.kind %>
 </p>
+
+<p>
+  <strong>Comments</strong>
+</p>
+<p>
+
+  <% @worker.get_comments.each do |review| %>
+    <ol class="posts">
+        <div class="form-group">
+      <span class="content"><%= review.comment %></span>
+        </div>
+    </ol>
+  <% end %>
+</p>
+
 </div>
 
 <div class="col-sm-7">

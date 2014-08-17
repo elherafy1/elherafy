@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   resources :workers do
     resources :reviews
+    resources :comments
   end
   
-
   root 'elherafy#home'
   get '/order' => "elherafy#order"
   get "reviews/new"
   post "reviews/create"
+  get "comments/new"
+  post "comments/create"
   get '/about' => "elherafy#about"
   get '/mabalat' => "elherafy#mabalat"
   
