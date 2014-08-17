@@ -16,23 +16,7 @@ def update
    end
 end
 
-  private
-  def admin_params
-    params.require(:admin).permit(:email, :password,:name, :password_confirmation)
-  end
 
-
-  def correct_admin
-     @admin = Admin.find(params[:id])
-   redirect_to root_path unless current_admin?(@admin)
-     
-   end
-
-
-   def admin_user
-
-   redirect_to root_path unless current_admin.admin?
-   end
 
 
 

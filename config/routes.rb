@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  resources :workers
-  resources :reviews
 
+
+  devise_for :admins
+  resources :workers do
+    resources :reviews
+    resources :comments
+  end
+  
   root 'elherafy#home'
   get '/order' => "elherafy#order"
   get "reviews/new"
   post "reviews/create"
+  get "comments/new"
+  post "comments/create"
+  get '/about' => "elherafy#about"
+  get '/mabalat' => "elherafy#mabalat"
   
 
   # The priority is based upon order of creation: first created -> highest priority.

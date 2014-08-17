@@ -1,22 +1,26 @@
 class ReviewsController < ApplicationController
 
+	before_filter :set_worker
 
 	def new
-		#@review = Review.new
+		@review = @worker.reviews.build
+	end
+
+	def show
+		
 	end
 
 
 	def create
-		@review = Review.new(review_params)
+		@review = @worker.reviews.build(review_params)
 
+	respond_to do |format|
 		if @review.save
-			flash[:success] = "Review sent"
-			puts "in create action"
-			puts "flash is #{flash}"
-			redirect_to workers_path
+			format.html { redirect_to workers_path, notice: 'Review was sent.' }
 		else
-			puts "unsuccessful"
+			format.html { render :new }
 		end
+	end
 		
 			#redirect_to :back
 	end
@@ -24,7 +28,10 @@ class ReviewsController < ApplicationController
 	private
 
 	def review_params
-      params.require(:review).permit(:price, :clean, :quilty, :disicpline, :treatment)
+      params.require(:review).permit(:price, :clean, :quilty, :disicpline, :treatment, :comment)
     end
 
+    def set_worker
+    	@worker= Worker.find(params[:worker_id])
+    end
 end

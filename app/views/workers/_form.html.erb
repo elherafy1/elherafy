@@ -1,3 +1,6 @@
+<div class="jumbotron">
+      <div class="container">
+        <div class="row">
 <%= form_for(@worker) do |f| %>
   <% if @worker.errors.any? %>
     <div id="error_explanation">
@@ -5,25 +8,139 @@
 
       <ul>
       <% @worker.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><%= message %></li><br>
       <% end %>
       </ul>
     </div>
   <% end %>
 
+<div class="col-sm-5">
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
     <%= f.label :area %><br>
-    <%= f.text_field :area %>
+    <%= f.select :area, options_for_select([['cairo','Cairo'],['giza', 'Giza']])%>
+
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select :status, options_for_select([['Available','Available'],['Busy', 'Busy']])%>
   </div>
+  <div class="field">
+    <%= f.label :kind %><br>
+    <%= f.select :kind, options_for_select([['naggar','naggar'],['mabalat', 'mabalat'],['sabak', 'sabak']])%>
+  </div>
+
+  <% if f.object.new_record? %>
+    <%= f.fields_for :comments do |comment| %>
+
+
+    <% end %>
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  </div>
+     <div class="col-sm-5">
+
+<% if f.object.new_record? %>
+  <%= f.fields_for :reviews do |review| %>
+    
+    <div class="col-sm-14">
+  <p>
+    <div class="col-sm-7">
+      <strong><td><img src="http://picturesofmoney.org/wp-content/uploads/2013/04/Money-Bag.jpg" width="50" height="50"></td></strong>
+    <strong class="choice">Price</strong>
+    </div>
+    <div class="col-sm-9">
+  <span class="star-rating">
+    <%= review.radio_button :price, 1 %><i></i>
+    <%= review.radio_button :price, 2 %><i></i>
+    <%= review.radio_button :price, 3 %><i></i>
+    <%= review.radio_button :price, 4 %><i></i>
+    <%= review.radio_button :price, 5 %><i></i>
+  </span>
+
+
+  </div>
+  </p>
+  <p>
+    <div class="col-sm-7">
+      <strong><td><img src="http://www.valleymaid.com/img/slide3.jpg" width="50" height="50"></td></strong>
+    <strong class="choice">Cleanness</strong>
+    </div>
+    <div class="col-sm-14">
+  <span class="star-rating">
+    <%= review.radio_button :clean, 1 %><i></i>
+    <%= review.radio_button :clean, 2 %><i></i>
+    <%= review.radio_button :clean, 3 %><i></i>
+    <%= review.radio_button :clean, 4 %><i></i>
+    <%= review.radio_button :clean, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+    <p>
+      <div class="col-sm-7">
+        <strong><td><img src="http://t1.ftcdn.net/jpg/00/09/46/22/400_F_9462265_vOevFlobdhEnXiwG4jTOGkVeeSq8Qz7B.jpg" width="50" height="50"></td></strong>
+    <strong class="choice">Quality</strong>
+    </div>
+    <div class="col-sm-14">
+  <span class="star-rating">
+    <%= review.radio_button :quilty, 1 %><i></i>
+    <%= review.radio_button :quilty, 2 %><i></i>
+    <%= review.radio_button :quilty, 3 %><i></i>
+    <%= review.radio_button :quilty, 4 %><i></i>
+    <%= review.radio_button :quilty, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+    <p>
+      <div class="col-sm-7">
+        <strong><td><img src="https://basictrainingacademy.files.wordpress.com/2012/05/china-drill-squad-training.jpg" width="50" height="50"></td></strong>
+    <strong class="choice">Discipline</strong>
+    </div>
+        <div class="col-sm-14">
+  <span class="star-rating">
+    <%= review.radio_button :disicpline, 1 %><i></i>
+    <%= review.radio_button :disicpline, 2 %><i></i>
+    <%= review.radio_button :disicpline, 3 %><i></i>
+    <%= review.radio_button :disicpline, 4 %><i></i>
+    <%= review.radio_button :disicpline, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+    <p>
+      <div class="col-sm-7">
+        <strong><td><img src="http://4.bp.blogspot.com/-feyoKdTvJ9Q/T-mqHS6JLNI/AAAAAAAADzU/xiONarI_kA4/s1600/ar132547604391036.jpg" width="50" height="50"></td></strong>
+    <strong class="choice">Treatment</strong>
+    </div>
+    <div class="col-sm-14">
+  <span class="star-rating">
+    <%= review.radio_button :treatment, 1 %><i></i>
+    <%= review.radio_button :treatment, 2 %><i></i>
+    <%= review.radio_button :treatment, 3 %><i></i>
+    <%= review.radio_button :treatment, 4 %><i></i>
+    <%= review.radio_button :treatment, 5 %><i></i>
+  </span>
+  </div>
+  </p>
+
+  
+  <% end %>
 <% end %>
+</div>
+
+<% end %>
+
+
+  </div>
+</div>

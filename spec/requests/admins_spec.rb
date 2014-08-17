@@ -3,12 +3,21 @@
 RSpec.describe "Admins", :type => :request do
  
 	subject{page}
+
+	before do
+		@review= FactoryGirl.create(:review)
+		@worker=FactoryGirl.build(:worker)
+		@worker.reviews<<@review
+		@worker.save
+	end
 	describe "edit" do
 		let(:admin) { FactoryGirl.create(:admin) }
-		let (:worker) { FactoryGirl.create(:worker) }
+
+
+		#let (:worker) { FactoryGirl.create(:worker) }
 		before do
 			sign_in admin
-			 visit edit_worker_path(worker) 
+			 visit edit_worker_path(@worker) 
 			end
 
 
@@ -40,9 +49,9 @@ RSpec.describe "Admins", :type => :request do
 
   	it { should have_link('Sign out', href: signout_path) }
   	it { should have_selector('div.alert.alert-success') }
-  	specify { worker.reload.name.should == new_name }
-  	specify { worker.reload.area.should == new_area }
-  	specify { worker.reload.status.should == new_status }
+  	specify { @worker.reload.name.should == new_name }
+  	specify { @worker.reload.area.should == new_area }
+  	specify { @worker.reload.status.should == new_status }
 		end
 
 	end

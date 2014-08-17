@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :review do
-    price ""
-    clean ""
-    quilty ""
-    disicpline ""
-    treatment ""
+    price 1
+    clean 2
+    quilty 3
+    disicpline 2
+    treatment 1
   end
 end

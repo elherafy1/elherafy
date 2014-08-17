@@ -1,0 +1,35 @@
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <meta charset="utf-8">
+                    <title></title>
+                
+    </head>
+    <body>
+       
+        <ul>
+            <% @workers.each do |worker| %>
+                <tr>
+        <div class="col-sm-7">
+        <% if worker.average_rate > 20 %>
+          <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
+        <% elsif worker.average_rate > 15 && worker.average_rate <= 20%>
+          <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30"></td>
+        <% elsif worker.average_rate > 10 && worker.average_rate <= 15 %>
+          <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30"></td>
+        <% else %>
+          <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
+        <% end %>
+
+
+        <td><%= worker.name %></td>
+        <td><%= worker.area %></td>
+        <td><%= worker.status %></td>
+        <td><%= link_to 'Show', worker %></td>
+        </div>
+            <% end %>
+        </ul>
+    </body>
+    </div>
+            </div>
+        </div>

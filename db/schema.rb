@@ -37,14 +37,18 @@ ActiveRecord::Schema.define(version: 20140817072232) do
     t.integer  "quilty"
     t.integer  "disicpline"
     t.integer  "treatment"
+    t.string   "comment"
+    t.integer  "worker_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "workers", force: true do |t|
     t.string   "name"
+    t.integer  "phone"
     t.string   "area"
     t.string   "status"
+    t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

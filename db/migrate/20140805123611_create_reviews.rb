@@ -6,6 +6,8 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :quilty
       t.integer :disicpline
       t.integer :treatment
+      t.string :comment
+      t.integer :worker_id
 
       t.timestamps
     end

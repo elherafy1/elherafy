@@ -2,8 +2,19 @@
       <div class="container">
         <div class="row">
         	<title>Review</title>
-<body> 
-	<%= form_for(:review, :url => reviews_path) do |f| %>
+
+	<%= form_for([@worker, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this worker from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li><br>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 	<p>
 		<div class="col-sm-5">
@@ -78,14 +89,15 @@
 	</div>
 	</p>
 
+<p>
 	<div class="col-sm-5">
+		<div class="field">
+    		<strong class="choice">Add comment</strong>
+    		<%= f.text_area :comment %>
+    </div>
+    </div>
+<%= f.submit  "Send my review", :class => "btn btn-primary" %>
 
-	<%= f.submit  "Send my review", :class => "btn btn-primary" %>
-
-	</div>
-
-	<% end %> 
+<% end %> 
 	
-		</body></html>
-        </div>
-      </div>
+	
