@@ -38,6 +38,7 @@ RSpec.describe "Admins", :type => :request do
 			    click_button "Save changes"
 			end
 
+  	it { should have_link('Sign out', href: signout_path) }
   	it { should have_selector('div.alert.alert-success') }
   	specify { worker.reload.name.should == new_name }
   	specify { worker.reload.area.should == new_area }

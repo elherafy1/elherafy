@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+  before_filter :correct_admin, only: [:edit, :update]
+  before_filter :admin_user, only: :destroy
 
 def edit
 
@@ -13,5 +15,25 @@ def update
      render 'edit'
    end
 end
+
+  private
+  def admin_params
+    params.require(:admin).permit(:email, :password,:name, :password_confirmation)
+  end
+
+
+  def correct_admin
+     @admin = Admin.find(params[:id])
+   redirect_to root_path unless current_admin?(@admin)
+     
+   end
+
+
+   def admin_user
+
+   redirect_to root_path unless current_admin.admin?
+   end
+
+
 
 end
