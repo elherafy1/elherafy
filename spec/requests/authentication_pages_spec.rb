@@ -40,7 +40,7 @@ RSpec.describe "AuthenticationPages", :type => :request do
 
     describe "follow by signout" do
     	before { click_link "Sign out" }
-    /////////////////////////////////	it {should have_css("form.signin")}
+    #it {should have_css("form.signin")}
 
     end
 

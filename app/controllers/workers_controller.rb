@@ -28,6 +28,7 @@ class WorkersController < ApplicationController
 
     respond_to do |format|
       if @worker.save
+        
         format.html { redirect_to @worker, notice: 'Worker was successfully created.' }
         format.json { render :show, status: :created, location: @worker }
       else
