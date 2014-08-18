@@ -47,8 +47,8 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <a href="http://localhost:3000/mabalat?worker_type=mabalat"><img src="http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg" width="445" height="300"/></a>
-
+    <%= link_to (image_tag "http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg",  :width=>"445", :height=>"300"), mabalat_path(:worker_type => 'mabalat') %> 
+    
     <a href="http://localhost:3000/mabalat?worker_type=naggar"><img src="http://www.courtyardboulder.com/wp-content/uploads/2013/05/General-Carpentry-Knowledge.jpg" width="445" height="300"/></a>
 
     <a href="http://localhost:3000/mabalat?worker_type=sabak"><img src="http://www.kakaboyplumbers.co.za/images/plumbing_tool.jpg" width="445" height="300"/></a>
