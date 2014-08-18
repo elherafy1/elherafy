@@ -42,12 +42,13 @@ RSpec.describe "Admins", :type => :request do
 			let(:new_status) { "New Status"}
 			before do
 				fill_in "Name", with: new_name
-				fill_in "Area", with: new_area
-				fill_in "Status", with: new_status
+				select 'giza', from:'Area'
+				select 'Busy', from:'Status'
+				select 'naggar', from:'Kind'
 			    click_button "Save changes"
 			end
 
-  	it { should have_link('Sign out', href: signout_path) }
+  	it { should have_link('Sign out', href: destroy_admin_session_path) }
   	it { should have_selector('div.alert.alert-success') }
   	specify { @worker.reload.name.should == new_name }
   	specify { @worker.reload.area.should == new_area }

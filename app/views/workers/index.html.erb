@@ -12,7 +12,7 @@
 
     <% @workers.each do |worker| %>
       <tr>
-        <div class="col-sm-7">
+        <div class="col-sm-10">
         <% if worker.average_rate > 20 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif worker.average_rate > 15 && worker.average_rate <= 20%>
@@ -24,22 +24,22 @@
         <% end %>
 
         <strong>
-        <td><%= worker.name %></td><br>
+        <td><%= worker.name %></td>
         </strong>
-        <td><%= worker.phone %></td>
+      <br>
+
         <td><%= worker.area %></td>
         <td><%= worker.status %></td>
         <td><%= worker.kind %></td>
         
         </div>
-        <div class="col-sm-12">
+
+        <div class="col-sm-2">
           <body link="blue">
         <td><%= link_to 'Show', worker %></td>
-        <td><%= link_to 'Edit', edit_worker_path(worker) %></td>
-        <td><%= link_to 'Destroy', worker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'review', new_worker_review_path(worker) %></td>
           </body>
         </div>
+
       </tr><br>
     <% end %>
   </tbody>

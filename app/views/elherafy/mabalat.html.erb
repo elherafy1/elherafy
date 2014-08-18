@@ -1,8 +1,10 @@
         <div class="jumbotron">
             <div class="container">
+                <h1>Listing Type of workers</h1><br>
                 <div class="row">
                     <meta charset="utf-8">
-                    <title></title>
+                    <title>Filter</title>
+
                 
     </head>
     <body>
@@ -21,10 +23,15 @@
           <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
         <% end %>
 
-
-        <td><%= worker.name %></td>
+        <strong>
+        <td><%= worker.name %></td><br>
+        </strong>
+        </div>
+        <div class="col-sm-7">
         <td><%= worker.area %></td>
         <td><%= worker.status %></td>
+        </div>
+        <div class="col-sm-3">
         <td><%= link_to 'Show', worker %></td>
         </div>
             <% end %>

@@ -16,7 +16,7 @@ group :production do
 	gem 'pg'
 end
 
-gem 'devise'
+gem 'devise', '3.2.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

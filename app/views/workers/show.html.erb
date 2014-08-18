@@ -11,6 +11,12 @@
 </p>
 
 <p>
+  <strong>Phone:</strong>
+  <%= @worker.phone %>
+</p>
+
+
+<p>
   <strong>Area:</strong>
   <%= @worker.area %>
 </p>
@@ -25,26 +31,12 @@
   <%= @worker.kind %>
 </p>
 
-<p>
-  <strong>Comments</strong>
-</p>
-<p>
-
-  <% @worker.get_comments.each do |review| %>
-    <ol class="posts">
-        <div class="form-group">
-      <span class="content"><%= review.comment %></span>
-        </div>
-    </ol>
-  <% end %>
-</p>
-
 </div>
 
 <div class="col-sm-7">
 <p>
   <strong><td><img src="http://picturesofmoney.org/wp-content/uploads/2013/04/Money-Bag.jpg" width="50" height="50"></td></strong>
-  <strong>Price rate:</strong>
+  <strong>Price:</strong>
       <% if @worker.average_price > 4 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif @worker.average_price > 2.5 && @worker.average_rate <= 4%>
@@ -58,7 +50,7 @@
 
 <p>
   <strong><td><img src="http://www.valleymaid.com/img/slide3.jpg" width="50" height="50"></td></strong>
-  <strong>Clean rate:</strong>
+  <strong>Clean:</strong>
       <% if @worker.average_clean > 4 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif @worker.average_clean > 2.5 && @worker.average_clean <= 4%>
@@ -72,7 +64,7 @@
 
 <p>
   <strong><td><img src="http://t1.ftcdn.net/jpg/00/09/46/22/400_F_9462265_vOevFlobdhEnXiwG4jTOGkVeeSq8Qz7B.jpg" width="50" height="50"></td></strong>
-  <strong>Quilty rate:</strong>
+  <strong>Quilty:</strong>
       <% if @worker.average_quilty > 4 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif @worker.average_quilty > 2.5 && @worker.average_quilty <= 4%>
@@ -86,7 +78,7 @@
 
 <p>
   <strong><td><img src="https://basictrainingacademy.files.wordpress.com/2012/05/china-drill-squad-training.jpg" width="50" height="50"></td></strong>
-  <strong>Discipline rate:</strong>
+  <strong>Discipline:</strong>
       <% if @worker.average_disicpline > 4 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif @worker.average_disicpline > 2.5 && @worker.average_disicpline <= 4%>
@@ -100,7 +92,7 @@
 
 <p>
   <strong><td><img src="http://4.bp.blogspot.com/-feyoKdTvJ9Q/T-mqHS6JLNI/AAAAAAAADzU/xiONarI_kA4/s1600/ar132547604391036.jpg" width="50" height="50"></td></strong>
-  <strong>Treatment rate:</strong>
+  <strong>Treatment:</strong>
       <% if @worker.average_treatment > 4 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif @worker.average_treatment > 2.5 && @worker.average_treatment <= 4%>
@@ -113,9 +105,37 @@
 </p>
 </div>
 
+  <div class="col-sm-12">
+
+<p>
+  <td><img src="http://centerhillcampground.com/wp-content/uploads/2013/09/Custom-Icon-Design-Pretty-Office-9-Comment-edit1.ico" width="30" height="30"></td>
+  <strong>Comments</strong>
+</p>
+<p>
+
+  <% @worker.get_comments.each do |review| %>
+  <% if !review.comment.nil? %>
+    <ol class="posts">
+        <div class="form-group">
+      <span class="content">
+        <td><img src="http://www.combinedbook.com/blog/wp-content/uploads/2014/08/comment_edit.png" width="30" height="30"></td>
+        <%= review.comment %>
+      </span>
+        </div>
+    </ol>
+      <% end %>
+  <% end %>
+</p>
+
+  </div>
+
+  <div class="col-sm-12">
+<%= link_to 'review', new_worker_review_path(@worker) %> |
+<%= link_to 'Back', workers_path %> |
 <%= link_to 'Edit', edit_worker_path(@worker) %> |
-<%= link_to 'Back', workers_path %>
+<%= link_to 'Destroy', @worker, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 		</body></html>
         </div>
       </div>
-      <p dir="rtl" lang="ar" >انا البرنس يلا</p>
+     <p dir="rtl" lang="ar" ></p>

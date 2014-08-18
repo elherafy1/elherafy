@@ -39,10 +39,11 @@
 						            <li><%= link_to "mabalat", mabalat_path(:worker_type => 'mabalat') %> </li>
 						            <li><%= link_to "naggar", mabalat_path(:worker_type => 'naggar') %> </li>
 						            <li><%= link_to "sabak", mabalat_path(:worker_type => 'sabak') %> </li>
-						            <li><%= link_to "Workers", workers_path %></li>
-						            <li><%= link_to "New worker", new_worker_path %></li>
-						            <li><%= link_to "Sign out", root_path , method: "delete" %></li>
-							    </ul> 
+						            <li><%= link_to "Workers", workers_path %></li>  
+							    </ul>
+							    <% if admin_signed_in? %>
+							    <li><%= link_to "New worker", new_worker_path %></li>
+							    <li><%= link_to "Sign out", destroy_admin_session_path , method: "delete" %></li> <% end %>
 					        </li>
 					    </ul>
 	                </nav>
