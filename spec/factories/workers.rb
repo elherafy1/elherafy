@@ -5,5 +5,7 @@ FactoryGirl.define do
     name "MyString"
     area "MyString"
     status "MyString"
+    kind  "MyString"
+     phone "1234567"
   end
 end

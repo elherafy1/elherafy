@@ -5,7 +5,6 @@ class Worker < ActiveRecord::Base
 	validates :status, presence: true
 	validates :kind, presence: true
 	has_many :reviews, :dependent => :destroy
-	has_many :comments, :dependent => :destroy
 
 	validates_presence_of :reviews
 	validates_associated :reviews

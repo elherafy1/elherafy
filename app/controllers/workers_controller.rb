@@ -32,6 +32,7 @@ class WorkersController < ApplicationController
 
     respond_to do |format|
       if @worker.save
+        
         format.html { redirect_to @worker, notice: 'Worker was successfully created.' }
         format.json { render :show, status: :created, location: @worker }
       else
@@ -66,9 +67,7 @@ class WorkersController < ApplicationController
     end
   end
 
-  def review
-    @worker = Worker.find(params[:id])
-  end
+
 
   def comment
     @worker = Worker.find(params[:id])

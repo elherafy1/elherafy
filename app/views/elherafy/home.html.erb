@@ -1,5 +1,6 @@
-<strong><td><img src="http://3.bp.blogspot.com/-VPsmIBzBUSI/UkQVt38p3xI/AAAAAAAABAo/lThVEr-SNDU/s1600/logo6.jpg" width="1350" height="200"></td></strong>
+  <strong><td><img src="http://3.bp.blogspot.com/-VPsmIBzBUSI/UkQVt38p3xI/AAAAAAAABAo/lThVEr-SNDU/s1600/logo6.jpg" width="1300" height="200"></td></strong>
  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -13,7 +14,7 @@
             <div class="carousel-caption">
               <h1>Elherafy</h1>
               <p></p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign in as admin</a></p>
+              <p><a class="btn btn-lg btn-primary" href="http://localhost:3000//admins/sign_in" role="button">Sign in as admin</a></p>
             </div>
           </div>
         </div>
@@ -47,8 +48,18 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-    <%= link_to (image_tag "http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg",  :width=>"445", :height=>"300"), mabalat_path(:worker_type => 'mabalat') %> 
-    
-    <a href="http://localhost:3000/mabalat?worker_type=naggar"><img src="http://www.courtyardboulder.com/wp-content/uploads/2013/05/General-Carpentry-Knowledge.jpg" width="445" height="300"/></a>
 
-    <a href="http://localhost:3000/mabalat?worker_type=sabak"><img src="http://www.kakaboyplumbers.co.za/images/plumbing_tool.jpg" width="445" height="300"/></a>
+    <div class="col-sm-4">
+   <%= link_to (image_tag "http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg",  :width=>"445", :height=>"300"), mabalat_path(:worker_type => 'mabalat') %> 
+    </div>
+    <div class="col-sm-4">
+
+    <%= link_to (image_tag "http://www.courtyardboulder.com/wp-content/uploads/2013/05/General-Carpentry-Knowledge.jpg",  :width=>"445", :height=>"300"), mabalat_path(:worker_type => 'naggar') %> 
+    
+    </div>
+    <div class="col-sm-4">
+
+ <%= link_to (image_tag "http://www.kakaboyplumbers.co.za/images/plumbing_tool.jpg",  :width=>"445", :height=>"300"), mabalat_path(:worker_type => 'sabak') %> 
+   
+  
+    </div>

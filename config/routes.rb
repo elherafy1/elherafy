@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+  devise_for :admins
   resources :workers do
     resources :reviews
     resources :comments
