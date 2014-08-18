@@ -5,6 +5,11 @@ class AdminsController < ApplicationController
 def edit
 
 end
+
+def new
+  
+end
+
 def update
    if @workerer.update_attributes(worker_params)
       sign_in @admin

@@ -4,10 +4,6 @@ class ElherafyController < ApplicationController
 		
 	end
 
-	def order
-		
-	end
-
 	def create
 		
 	end

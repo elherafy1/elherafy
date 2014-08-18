@@ -67,9 +67,7 @@ class WorkersController < ApplicationController
     end
   end
 
-  def review
-    @worker = Worker.find(params[:id])
-  end
+
 
   def comment
     @worker = Worker.find(params[:id])
