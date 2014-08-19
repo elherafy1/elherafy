@@ -39,6 +39,10 @@ ActiveRecord::Schema.define(version: 20140817072232) do
     t.integer  "treatment"
     t.string   "comment"
     t.integer  "worker_id"
+    t.string   "client_name"
+    t.integer  "client_phone"
+    t.string   "client_email"
+    t.string   "client_addres"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

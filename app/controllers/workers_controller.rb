@@ -1,5 +1,9 @@
 class WorkersController < ApplicationController
+  #skip_before_filter :authenticate_admin! , [:show, :index] 
   before_action :set_worker, only: [:show, :edit, :update, :destroy]
+  #before_filter :admin_user, only: [:edit, :update, :create, :new, :destroy]
+   before_filter :authenticate_admin! , :except => [:show, :index]
+  
 
   # GET /workers
   # GET /workers.json
@@ -81,8 +85,12 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :phone, :area, :status, :kind, :reviews_attributes => [:price, :clean, :quilty, :disicpline, :treatment, :comment])
+      params.require(:worker).permit(:name, :phone, :area, :status, :kind, :reviews_attributes => [:price, :clean, :quilty, :disicpline, :treatment, :comment, :client_name, :client_phone, :client_email, :client_address])
     end
+
+    # def admin_user
+    #     redirect_to root_path unless admin_signed_in?
+    # end
 
 
 end

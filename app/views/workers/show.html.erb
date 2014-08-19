@@ -131,9 +131,11 @@
 
   <div class="col-sm-12">
 <%= link_to 'review', new_worker_review_path(@worker) %> |
-<%= link_to 'Back', workers_path %> |
+<%= link_to 'Back', workers_path %>
+<% if admin_signed_in? %> |
 <%= link_to 'Edit', edit_worker_path(@worker) %> |
 <%= link_to 'Destroy', @worker, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
   </div>
 		</body></html>
         </div>

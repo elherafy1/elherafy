@@ -1,5 +1,7 @@
 class ElherafyController < ApplicationController
 
+	
+
 	def home
 		
 	end

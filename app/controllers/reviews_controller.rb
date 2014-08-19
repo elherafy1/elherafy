@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
 	before_filter :set_worker
-
+	
 	def new
 		@review = @worker.reviews.build
 	end
@@ -21,14 +21,12 @@ class ReviewsController < ApplicationController
 			format.html { render :new }
 		end
 	end
-		
-			#redirect_to :back
 	end
 
 	private
 
 	def review_params
-      params.require(:review).permit(:price, :clean, :quilty, :disicpline, :treatment, :comment)
+      params.require(:review).permit(:price, :clean, :quilty, :disicpline, :treatment, :comment, :client_name, :client_phone, :client_addres, :client_email)
     end
 
     def set_worker

@@ -98,10 +98,36 @@
     		<%= f.text_area :comment , :class =>"form-control"%>
     	</div>
     </div>
-<%= f.submit  "Send my review", :class => "btn btn-primary" %>
+</p>
+
+    <p>
+    <div class="field">
+		<div class="col-sm-5">
+			<p>
+    		<strong class="choice">Client</strong>
+    	</p><br>
+    		<p>
+			<%= f.label :client_name %>
+    		<%= f.text_field :client_name%><br>
+    		</p>
+    			<p>
+			<%= f.label :client_email %>
+    		<%= f.text_field :client_email%><br>
+    		</p>
+    			<p>
+			<%= f.label :client_phone %>
+    		<%= f.text_field :client_phone%><br>
+    		</p>
+    			<p>
+			<%= f.label :client_addres %>
+    		<%= f.text_field :client_addres%><br>
+    		</p>
+		<%= f.submit  "Send my review", :class => "btn btn-primary" %>
+
+    	</div>
+    	
+    </p>
+</div>
 </div>
 
-
 <% end %> 
-	
-	
