@@ -9,12 +9,13 @@ group :development, :test  do
  gem "factory_girl_rails", "~> 4.0"
  gem 'capybara'
  gem 'simplecov', '~> 0.7.1'
- gem 'faker'
 gem 'sqlite3'
 end
 group :production do
 	gem 'pg'
 end
+
+gem 'faker'
 
 gem 'devise', '3.2.4'
 # Use SCSS for stylesheets
