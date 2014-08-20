@@ -1,6 +1,6 @@
         <div class="jumbotron">
             <div class="container">
-                <h1>Listing Type of workers</h1><br>
+                <h1><%= @workers.first.kind %></h1><br>
                 <div class="row">
                     <meta charset="utf-8">
                     <title>Filter</title>
@@ -10,7 +10,7 @@
     <body>
        
         <ul>
-            <% @workers.each do |worker| %>
+            <% @workers.sort{|x,y| x.average_rate <=> y.average_rate}.reverse.each do |worker| %>
                 <tr>
         <div class="col-sm-7">
         <% if worker.average_rate > 20 %>
@@ -32,7 +32,7 @@
         <td><%= worker.status %></td>
         </div>
         <div class="col-sm-3">
-        <td><%= link_to 'Show', worker %></td>
+        <td><%= link_to 'Show', worker, :style => "color:blue;" %></td>
         </div>
             <% end %>
         </ul>

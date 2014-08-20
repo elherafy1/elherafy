@@ -6,11 +6,13 @@
 	        	<% @worker.reviews.each do |r| %>
 	        	<p>
 	        		<strong>Client name:</strong> 
-	        		<%= r.client_name %> 
+	        		<%= r.client_name %> <br>
 	        		<strong>Client phone:</strong> 
-	        		<%= r.client_phone %> 
+	        		<%= r.client_phone %> <br>
 	        		<strong>Client email:</strong> 
 	        		<%= r.client_email %> <br>
+	        		<strong>Client addres:</strong> 
+	        		<%= r.client_addres %> <br>
 	        	</p>
 	        		<em>Quilty:</em> |
 	        		<%= r.quilty %> |
@@ -22,10 +24,11 @@
 	        		<%= r.clean %> |
 	        		<em>Price:</em> |
 	        		<%= r.price %> |
-	        		<%= link_to 'Destroy', worker_review_path(@worker.id,r.id), method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%><br>
+	        		<%= link_to 'Destroy', worker_review_path(@worker.id,r.id), method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%> 
 	        		<br>
 	        	<% end %>
         	</p>
+        	<%= link_to 'Back', @worker, :style => "color:blue;" %>
         </div>
     </div>
 </div>

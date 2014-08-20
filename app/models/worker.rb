@@ -10,6 +10,17 @@ class Worker < ActiveRecord::Base
 	validates_associated :reviews
 	accepts_nested_attributes_for :reviews
 		
+	def self.max_mabalat
+		worker = Worker.where(:kind => 'mabalat').sort{|x,y| x.average_rate <=> y.average_rate}.reverse.first
+	end
+
+	def self.max_sabak
+		worker = Worker.where(:kind => 'sabak').sort{|x,y| x.average_rate <=> y.average_rate}.reverse.first
+	end
+
+	def self.max_naggar
+		worker = Worker.where(:kind => 'naggar').sort{|x,y| x.average_rate <=> y.average_rate}.reverse.first
+	end
 
 	def average_rate
 		rate =  Review.where(:worker_id => self.id).average(:price) + 

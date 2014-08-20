@@ -14,12 +14,26 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>BEST NAGGAR</h1>
+<h1><%= Worker.max_mabalat.name %></h1>
+              <% if Worker.max_mabalat.average_rate > 20 %>
+                <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="90" height="90"></td>
+              <% elsif Worker.max_mabalat.average_rate > 15 && Worker.max_mabalat.average_rate <= 20%>
+                <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="90" height="90"></td>
+              <% elsif Worker.max_mabalat.average_rate > 10 && Worker.max_mabalat.average_rate <= 15 %>
+                <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="90" height="90"></td>
+              <% else %>
+                <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="90" height="90"></td>            
+              <% end %>
+
+              <p><strong>MABALT</strong></p>
+              <p>
+              <%= render 'elherafy/home', :worker => Worker.max_mabalat%>
+              </p><br>              
               <p></p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">SHOW PROFILE</a></p>
+              <p><a <%= link_to 'Show Profile', Worker.max_mabalat , :class => "btn btn-primary"%></a></p>
             </div>
           </div>
         </div>
@@ -27,9 +41,23 @@
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>BEST MABALAT</h1>
+<h1><%= Worker.max_sabak.name %></h1>
+              <% if Worker.max_sabak.average_rate > 20 %>
+                <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="90" height="90"></td>
+              <% elsif Worker.max_sabak.average_rate > 15 && Worker.max_sabak.average_rate <= 20%>
+                <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="90" height="90"></td>
+              <% elsif Worker.max_sabak.average_rate > 10 && Worker.max_sabak.average_rate <= 15 %>
+                <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="90" height="90"></td>
+              <% else %>
+                <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="90" height="90"></td>            
+              <% end %>
+        
+              <p><strong>SABAK</strong></p>
+              <p>
+              <%= render 'elherafy/home', :worker => Worker.max_sabak%>
+              </p><br>              
               <p></p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">SHOW PROFILE</a></p>
+              <p><a <%= link_to 'Show Profile', Worker.max_sabak , :class => "btn btn-primary"%></a></p>
             </div>
           </div>
         </div>
@@ -37,19 +65,31 @@
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>BEST SABBAK</h1>
+              <h1><%= Worker.max_naggar.name %></h1>
+              <% if Worker.max_naggar.average_rate > 20 %>
+                <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="90" height="90"></td>
+              <% elsif Worker.max_naggar.average_rate > 15 && Worker.max_naggar.average_rate <= 20%>
+                <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="90" height="90"></td>
+              <% elsif Worker.max_naggar.average_rate > 10 && Worker.max_naggar.average_rate <= 15 %>
+                <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="90" height="90"></td>
+              <% else %>
+                <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="90" height="90"></td>            
+              <% end %>
+        
+              <p><strong>NAGAR</strong></p>
+              <p>
+              <%= render 'elherafy/home', :worker => Worker.max_naggar%>
+              </p><br>              
               <p></p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">SHOW PROFILE</a></p>
+              <p><a <%= link_to 'Show Profile', Worker.max_naggar , :class => "btn btn-primary"%></a></p>
             </div>
           </div>
         </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>

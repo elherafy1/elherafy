@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 
 		respond_to do |format|
 			if @review.save
-				format.html { redirect_to workers_path, notice: 'Review was sent.' }
+				format.html { redirect_to @worker, notice: 'Review was sent.' }
 			else
 				format.html { render :new }
 			end
