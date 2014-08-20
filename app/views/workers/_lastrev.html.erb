@@ -1,0 +1,77 @@
+<p>
+<strong>Last Reviews</strong>
+</p>
+<p>
+<strong>Quilty:</strong>
+<% @worker.reviews.last(3).reverse.each do |r| %>
+      <% if r.quilty > 4 %>
+          <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
+        <% elsif r.quilty > 2.5 && r.quilty <= 4%>
+          <img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30">
+        <% elsif r.quilty > 1 && r.quilty <= 2.5 %>
+          <img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30">
+        <% else %>
+          <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
+    <% end %>
+<% end %>
+</p>
+
+<p>
+<strong>Discipline:</strong>
+<% @worker.reviews.last(3).reverse.each do |r| %>
+      <% if r.disicpline > 4 %>
+          <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
+        <% elsif r.disicpline > 2.5 && r.disicpline <= 4%>
+          <img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30">
+        <% elsif r.disicpline > 1 && r.disicpline <= 2.5 %>
+          <img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30">
+        <% else %>
+          <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
+    <% end %>
+<% end %>
+</p>
+
+<p>
+<strong>Discipline:</strong>
+<% @worker.reviews.last(3).reverse.each do |r| %>
+      <% if r.treatment > 4 %>
+          <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
+        <% elsif r.treatment > 2.5 && r.treatment <= 4%>
+          <img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30">
+        <% elsif r.treatment > 1 && r.treatment <= 2.5 %>
+          <img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30">
+        <% else %>
+          <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
+    <% end %>
+<% end %>
+</p>
+
+<p>
+<strong>Clean:</strong>
+<% @worker.reviews.last(3).reverse.each do |r| %>
+      <% if r.clean > 4 %>
+          <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
+        <% elsif r.clean > 2.5 && r.clean <= 4%>
+          <img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30">
+        <% elsif r.clean > 1 && r.clean <= 2.5 %>
+          <img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30">
+        <% else %>
+          <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
+    <% end %>
+<% end %>
+</p>
+
+<p>
+<strong>Price:</strong>
+<% @worker.reviews.last(3).reverse.each do |r| %>
+      <% if r.price > 4 %>
+          <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
+        <% elsif r.price > 2.5 && r.price <= 4%>
+          <img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30">
+        <% elsif r.price > 1 && r.price <= 2.5 %>
+          <img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30">
+        <% else %>
+          <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
+    <% end %>
+<% end %>
+</p>

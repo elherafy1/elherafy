@@ -30,79 +30,20 @@
   <strong>kind:</strong>
   <%= @worker.kind %>
 </p>
-
+<p>
+    <strong>
+      <%= link_to 'Review', new_worker_review_path(@worker), :class => "btn btn-primary"  %> 
+      </strong><br>
+</p>
 </div>
+<div class="col-sm-6">
+  <p>
+  <%= render 'workers/rates', :worker => @worker%>
+  </p><br>
 
-<div class="col-sm-7">
-<p>
-  <strong><td><img src="http://picturesofmoney.org/wp-content/uploads/2013/04/Money-Bag.jpg" width="50" height="50"></td></strong>
-  <strong>Price:</strong>
-      <% if @worker.average_price > 4 %>
-          <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_price > 2.5 && @worker.average_rate <= 4%>
-          <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_price > 1 && @worker.average_rate <= 2.5 %>
-          <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30"></td>
-        <% else %>
-          <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
-    <% end %>
-</p>
-
-<p>
-  <strong><td><img src="http://www.valleymaid.com/img/slide3.jpg" width="50" height="50"></td></strong>
-  <strong>Clean:</strong>
-      <% if @worker.average_clean > 4 %>
-          <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_clean > 2.5 && @worker.average_clean <= 4%>
-          <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_clean > 1 && @worker.average_clean <= 2.5 %>
-          <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30"></td>
-        <% else %>
-          <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
-    <% end %>
-</p>
-
-<p>
-  <strong><td><img src="http://t1.ftcdn.net/jpg/00/09/46/22/400_F_9462265_vOevFlobdhEnXiwG4jTOGkVeeSq8Qz7B.jpg" width="50" height="50"></td></strong>
-  <strong>Quilty:</strong>
-      <% if @worker.average_quilty > 4 %>
-          <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_quilty > 2.5 && @worker.average_quilty <= 4%>
-          <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_quilty > 1 && @worker.average_quilty <= 2.5 %>
-          <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30"></td>
-        <% else %>
-          <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
-    <% end %>
-</p>
-
-<p>
-  <strong><td><img src="https://basictrainingacademy.files.wordpress.com/2012/05/china-drill-squad-training.jpg" width="50" height="50"></td></strong>
-  <strong>Discipline:</strong>
-      <% if @worker.average_disicpline > 4 %>
-          <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_disicpline > 2.5 && @worker.average_disicpline <= 4%>
-          <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_disicpline > 1 && @worker.average_disicpline <= 2.5 %>
-          <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30"></td>
-        <% else %>
-          <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
-    <% end %>
-</p>
-
-<p>
-  <strong><td><img src="http://4.bp.blogspot.com/-feyoKdTvJ9Q/T-mqHS6JLNI/AAAAAAAADzU/xiONarI_kA4/s1600/ar132547604391036.jpg" width="50" height="50"></td></strong>
-  <strong>Treatment:</strong>
-      <% if @worker.average_treatment > 4 %>
-          <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_treatment > 2.5 && @worker.average_treatment <= 4%>
-          <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30"></td>
-        <% elsif @worker.average_treatment > 1 && @worker.average_treatment <= 2.5 %>
-          <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30"></td>
-        <% else %>
-          <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
-    <% end %>
-</p>
+  <p>
+  <%= render 'workers/lastrev', :worker => @worker %>
+  </p>
 </div>
 
   <div class="col-sm-12">
@@ -130,12 +71,14 @@
   </div>
 
   <div class="col-sm-12">
-<%= link_to 'review', new_worker_review_path(@worker) %> |
-<%= link_to 'Back', workers_path %>
-<% if admin_signed_in? %> |
-<%= link_to 'Edit', edit_worker_path(@worker) %> |
-<%= link_to 'Destroy', @worker, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+      
+      <% if admin_signed_in? %>
+      <%= link_to 'Edit', edit_worker_path(@worker), :style => "color:blue;"%> |
+      <%= link_to 'show reviews', worker_reviews_path(@worker), :style => "color:blue;" %> |
+      <%= link_to 'Destroy', @worker, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:blue;" %> |
+      <%= link_to 'Back', workers_path %>
+
+      <% end %>
   </div>
 		</body></html>
         </div>

@@ -8,9 +8,7 @@ class WorkersController < ApplicationController
   # GET /workers
   # GET /workers.json
   def index
-    @workers = Worker.all
-
-
+    @workers = Worker.all.sort{|x,y| x.average_rate <=> y.average_rate}.reverse
   end
 
   # GET /workers/1
@@ -85,7 +83,7 @@ class WorkersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def worker_params
-      params.require(:worker).permit(:name, :phone, :area, :status, :kind, :reviews_attributes => [:price, :clean, :quilty, :disicpline, :treatment, :comment, :client_name, :client_phone, :client_email, :client_address])
+      params.require(:worker).permit(:name, :phone, :area, :status, :kind, :reviews_attributes => [:price, :clean, :quilty, :disicpline, :treatment, :comment])
     end
 
     # def admin_user

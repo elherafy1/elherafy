@@ -15,6 +15,8 @@ group :production do
 	gem 'pg'
 end
 
+gem 'letsrate'
+
 gem 'faker'
 
 gem 'devise', '3.2.4'

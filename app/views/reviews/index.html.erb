@@ -1,0 +1,31 @@
+<div class="jumbotron">
+      <div class="container">
+      	<h1>All reviews of <%=@worker.name%>  </h1><br>
+        <div class="row">
+        	<p>
+	        	<% @worker.reviews.each do |r| %>
+	        	<p>
+	        		<strong>Client name:</strong> 
+	        		<%= r.client_name %> 
+	        		<strong>Client phone:</strong> 
+	        		<%= r.client_phone %> 
+	        		<strong>Client email:</strong> 
+	        		<%= r.client_email %> <br>
+	        	</p>
+	        		<em>Quilty:</em> |
+	        		<%= r.quilty %> |
+	        		<em>Disicpline:</em> |
+	        		<%= r.disicpline %> |
+	        		<em>Treatment:</em> |
+	        		<%= r.treatment %> |
+	        		<em>Clean:</em> |
+	        		<%= r.clean %> |
+	        		<em>Price:</em> |
+	        		<%= r.price %> |
+	        		<%= link_to 'Destroy', worker_review_path(@worker.id,r.id), method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%><br>
+	        		<br>
+	        	<% end %>
+        	</p>
+        </div>
+    </div>
+</div>

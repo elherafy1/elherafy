@@ -57,17 +57,26 @@
 </div>
 <div class="row">
     <div class="col-sm-4">
-   <%= link_to (image_tag "http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'mabalat') %> 
+      <p>
+   <%= link_to (image_tag "http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'mabalat') %>
+         <strong>
+      <%= link_to 'MABALAT', "#", :class => "btn btn-primary", :class =>"form-control"  %> 
+      </strong> 
     </div>
+    </p>
     <div class="col-sm-4">
 
     <%= link_to (image_tag "http://www.courtyardboulder.com/wp-content/uploads/2013/05/General-Carpentry-Knowledge.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'naggar') %> 
-    
+       <strong>
+      <%= link_to 'NAGGAR', "#", :class => "btn btn-primary", :class =>"form-control"  %> 
+      </strong>
     </div>
     <div class="col-sm-4">
 
  <%= link_to (image_tag "http://www.kakaboyplumbers.co.za/images/plumbing_tool.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'sabak') %> 
-   
+      <strong>
+      <%= link_to 'SABAK', "#", :class => "btn btn-primary", :class =>"form-control"  %> 
+      </strong>
    </div>
   
     </div>

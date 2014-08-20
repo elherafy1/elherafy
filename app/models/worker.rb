@@ -6,7 +6,7 @@ class Worker < ActiveRecord::Base
 	validates :kind, presence: true
 	has_many :reviews, :dependent => :destroy
 
-	validates_presence_of :reviews
+	validates_presence_of :reviews#, :on => :create#, :if => :strict_enabled
 	validates_associated :reviews
 	accepts_nested_attributes_for :reviews
 		
@@ -38,5 +38,9 @@ class Worker < ActiveRecord::Base
 	def get_comments
 		Review.where(:worker_id => self.id)
 	end
+
+	# def strict_enabled
+	# 	return true if self.new_object
+	# end
 
 end

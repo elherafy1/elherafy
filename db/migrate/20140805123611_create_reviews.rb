@@ -9,7 +9,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :comment
       t.integer :worker_id
       t.string :client_name
-      t.integer :client_phone
+      t.string :client_phone
       t.string :client_email
       t.string :client_addres
 
