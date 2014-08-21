@@ -8,36 +8,36 @@ RSpec.describe "Workers", :type => :request do
 		@worker.reviews<<@review
 		@worker.save
 	end	
-    describe "GET /workers" do
-        describe "Workers page" do
-         	it "workers" do
-                visit workers_path
-  		      	page.should have_content ('Listing workers')
-  		    	expect(page).to have_title('Workers')
-  		    	page.should have_selector('h1','Listing workers')
-  		    	should have_link('New Worker', href:new_worker_path)
-  			end
-  		end	
+  describe "GET /workers" do
+    describe "Workers page" do
+      it "workers" do
+        visit workers_path
+  		 	page.should have_content ('Listing workers')
+  		  expect(page).to have_title('Workers')
+  		  page.should have_selector('h1','Listing workers')
+  		  
+  		end
+  	end	
 
-  		describe "Workers page" do
-         	it "do new worker" do
-                visit new_worker_path
-  		      	page.should have_content ('New worker')
-  		    	expect(page).to have_title('Add Worker')
-  		    	page.should have_selector('h1','New worker')
-  			end
-  		end	
-
+  	describe "Workers page" do
+      it "do new worker" do
+        visit new_worker_path
+  		  page.should have_content ('New worker')
+  		  expect(page).to have_title('Add Worker')
+  		  page.should have_selector('h1','New worker')
+  		end
+  	end	
+    let(:admin) {FactoryGirl.create(:admin) }
+    before { sign_in admin }
     describe "edit" do
+      before do
 
-     
-        before do
-          visit edit_worker_path(@worker)
-        end
+        visit edit_worker_path(@worker)
+      end
 
-        describe "page" do
+      describe "page" do
         	
-            it{ page.should have_selector('h1','Editing worker')}
+            it{ page.should have_selector('h1','Update Worker Profile')}
             it{ expect(page).to have_title('Edit Worker')} 
         end
 

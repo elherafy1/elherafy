@@ -6,8 +6,8 @@ class Worker < ActiveRecord::Base
 	validates :kind, presence: true
 	has_many :reviews, :dependent => :destroy
 
-	validates_presence_of :reviews#, :on => :create#, :if => :strict_enabled
-	validates_associated :reviews
+	validates_presence_of :reviews, :on => :create#, :if => :strict_enabled
+	validates_associated :reviews, :on => :create
 	accepts_nested_attributes_for :reviews
 		
 
