@@ -1,63 +1,72 @@
 <div class="jumbotron">
       <div class="container">
         <div class="row">
-        	<title>Add Worker</title>
-<p id="notice"><%= notice %></p>
+        	<title></title>
+          <p>
+          <h1 dir="rtl" lang="ar" style = "font-size:50px; color:green;"> بيانات العامل </h1>
+          </p>
 
-<div class="col-sm-5">
-<p>
-  <strong>Name:</strong>
-  <%= @worker.name %>
+<div class="col-sm-6">
+  <p dir="rtl" lang="ar">
+  <%= render 'workers/rates', :worker => @worker%>
+  </p><br>
+</div>
+<li class="divider"></li>
+
+<div class="col-sm-6">
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>الاسم:</strong>
+  <%= @worker.name %><br>
 </p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @worker.phone %>
+<li class="divider"></li>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>الهاتف:</strong>
+  <%= @worker.phone %><br>
 </p>
-
-
-<p>
-  <strong>Area:</strong>
-  <%= @worker.area %>
+<li class="divider"></li>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>المنطقة:</strong>
+  <%= @worker.area %><br>
 </p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @worker.status %>
+<li class="divider"></li>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>الوضع:</strong>
+  <%= @worker.status %><br>
 </p>
-
-<p>
-  <strong>kind:</strong>
-  <%= @worker.kind %>
+<li class="divider"></li>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>النوع_العمل:</strong>
+  <%= @worker.kind %><br>
 </p>
-<p>
+<li class="divider"></li>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
     <strong>
-      <%= link_to 'Review', new_worker_review_path(@worker), :class => "btn btn-primary"  %> 
+      <%= link_to ' أضف تقييم ', new_worker_review_path(@worker), :class => "btn btn-primary", :style => "font-size:25px; color:black;" %> 
       </strong><br>
 </p>
 </div>
-<div class="col-sm-6">
-  <p>
-  <%= render 'workers/rates', :worker => @worker%>
-  </p><br>
+
+<li class="divider"></li>
+  
 
   <p>
+    <div class="col-sm-6">
   <%= render 'workers/lastrev', :worker => @worker %>
-  </p>
 </div>
+  </p>
 
-  <div class="col-sm-12">
+  <div class="col-sm-6">
 
-<p>
+<p dir="rtl" lang="ar" style = "font-size:30px; color:green;">
   <td><img src="http://centerhillcampground.com/wp-content/uploads/2013/09/Custom-Icon-Design-Pretty-Office-9-Comment-edit1.ico" width="30" height="30"></td>
-  <strong>Comments</strong>
+  <strong>التعليقات</strong>
 </p>
 <p>
 
   <% @worker.get_comments.each do |review| %>
   <% if !review.comment.nil? %>
     <ol class="posts">
-        <div class="form-group">
+        <div class="form-group" dir="rtl" lang="ar">
       <span class="content">
         <td><img src="http://www.combinedbook.com/blog/wp-content/uploads/2014/08/comment_edit.png" width="30" height="30"></td>
         <%= review.comment %>
@@ -70,17 +79,17 @@
 
   </div>
 
-  <div class="col-sm-12">
+  <div class="col-sm-12" dir="rtl" lang="ar">
       
       <% if admin_signed_in? %>
-      <%= link_to 'Edit', edit_worker_path(@worker), :style => "color:blue;"%> |
-      <%= link_to 'show reviews', worker_reviews_path(@worker), :style => "color:blue;" %> |
-      <%= link_to 'Destroy', @worker, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:blue;" %> |
-      <%= link_to 'Back', workers_path %>
+      <%= link_to 'تعديل العامل', edit_worker_path(@worker), :style => "color:blue; font-size:20px;"%> |
+      <%= link_to 'عرض التقييمات', worker_reviews_path(@worker), :style => "color:blue; font-size:20px;" %> |
+      <%= link_to 'حذف', @worker, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red; font-size:20px;" %> |
+      <%= link_to 'الرجوع', workers_path, :style => "font-size:20px;" %>
 
       <% end %>
   </div>
 		</body></html>
         </div>
       </div>
-     <p dir="rtl" lang="ar" ></p>
+     

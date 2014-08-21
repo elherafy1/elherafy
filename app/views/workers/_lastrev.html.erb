@@ -1,8 +1,8 @@
+<p dir="rtl" lang="ar">
 <p>
-<strong>Last Reviews</strong>
-</p>
+<strong dir="rtl" lang="ar" style = "font-size:30px; color:green;"> آخر ثلاث تقييمات </strong>
+</p><br>
 <p>
-<strong>Quilty:</strong>
 <% @worker.reviews.last(3).reverse.each do |r| %>
       <% if r.quilty > 4 %>
           <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
@@ -14,10 +14,10 @@
           <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
     <% end %>
 <% end %>
+<strong>:الجودة</strong>
 </p>
 
 <p>
-<strong>Discipline:</strong>
 <% @worker.reviews.last(3).reverse.each do |r| %>
       <% if r.disicpline > 4 %>
           <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
@@ -29,10 +29,10 @@
           <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
     <% end %>
 <% end %>
+<strong>:الانضباط</strong>
 </p>
 
 <p>
-<strong>Discipline:</strong>
 <% @worker.reviews.last(3).reverse.each do |r| %>
       <% if r.treatment > 4 %>
           <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
@@ -44,10 +44,10 @@
           <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
     <% end %>
 <% end %>
+<strong>:المعاملة</strong>
 </p>
 
 <p>
-<strong>Clean:</strong>
 <% @worker.reviews.last(3).reverse.each do |r| %>
       <% if r.clean > 4 %>
           <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
@@ -59,10 +59,10 @@
           <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
     <% end %>
 <% end %>
+<strong>:النظافة</strong>
 </p>
 
 <p>
-<strong>Price:</strong>
 <% @worker.reviews.last(3).reverse.each do |r| %>
       <% if r.price > 4 %>
           <img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30">
@@ -74,4 +74,6 @@
           <img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30">
     <% end %>
 <% end %>
+<strong>:السعر</strong>
+</p>
 </p>
