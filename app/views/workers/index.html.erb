@@ -3,7 +3,7 @@
         <div class="row">
           <title>Workers</title>
 <body> 
-<h1>Listing workers</h1>
+<h1 dir="rtl" style = "color:green;">قائمة العمال</h1>
 
 
 
@@ -12,7 +12,7 @@
 
     <% @workers.each do |worker| %>
       <tr>
-        <div class="col-sm-10">
+        <div  dir="rtl" class="col-sm-12">
         <% if worker.average_rate > 20 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif worker.average_rate > 15 && worker.average_rate <= 20%>
@@ -23,20 +23,20 @@
           <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
         <% end %>
 
-        <strong>
+        <strong  dir="rtl">
         <td><%= worker.name %></td>
         </strong>
       <br>
 
-        <td><%= worker.area %></td>
-        <td><%= worker.status %></td>
-        <td><%= worker.kind %></td>
+        <td dir="rtl"><%= worker.area %></td>
+        <td dir="rtl"><%= worker.status %></td>
+        <td dir="rtl"><%= worker.kind %></td>
         
         </div>
 
-        <div class="col-sm-2">
+        <div  dir="rtl" class="col-sm-2">
           <body link="blue">
-        <td><%= link_to 'Show', worker %></td>
+        <td><%= link_to 'إظهار', worker %></td>
           </body>
         </div>
 

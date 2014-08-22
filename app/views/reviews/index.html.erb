@@ -4,21 +4,46 @@
       	<h1 dir="rtl" lang="ar" style = "color:green;" >جميع التقييمات</h1><br>
       	
         <div class="row">
+
         	<p>
 	        	<% @worker.reviews.each do |r| %>
 	        	<p>
 	        		<p dir="rtl" lang="ar" style = "color:gray;">
-	        		<strong>اسم العميل:</strong> 
-	        		<%= r.client_name %> <br>
-	        		<strong>هاتف العميل:</strong> 
+	        			<strong>اسم العميل:</strong>
+	        			</p> 
+	        			<p dir="rtl" lang="ar" style = "color:gray;">
+	        			<%= r.client_name %> <br>
+	        		</p>
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
+	        		<strong>هاتف العميل:</strong>
+	        		</p> 
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
 	        		<%= r.client_phone %> <br>
-	        		<strong>بريد الإلكتروني العميل:</strong> 
+	        		</p>
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
+	        		<strong>بريد الإلكتروني العميل:</strong>
+	        		</p> 
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
 	        		<%= r.client_email %> <br>
-	        		<strong>عنوان العميل:</strong> 
+	        		</p>
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
+	        		<strong>عنوان العميل:</strong>
+	        		</p> 
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
 	        		<%= r.client_addres %> <br>
+	        		</p>
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
+	        		<strong>التعليق:</strong>
+	        		</p> 
+	        		<p dir="rtl" lang="ar" style = "color:gray;">
+	        		<%= r.comment %> <br>
+	        		</p>
 	        	</p>
 	        	</p>
-	        	<p dir="rtl" lang="ar" >
+	        	<p dir="rtl" lang="ar" style = "color:green;">
+	        		<em>التقييم</em><br>
+	        	</p>
+	        	<p dir="rtl" lang="ar">
 	        		<em>الجودة:</em> |
 	        		<%= r.quilty %> |
 	        		<em>الانضباط:</em> |
@@ -29,7 +54,11 @@
 	        		<%= r.clean %> |
 	        		<em>السعر:</em> |
 	        		<%= r.price %> |
+	        	</p><br>
+	        		<p dir="rtl" lang="ar" >
+	        			<%= link_to 'تعديل', '#', :style => "color:blue;"%> |
 	        		<%= link_to 'حذف', worker_review_path(@worker.id,r.id), method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%> 
+	        	</p>
 	        	</p>
 	        		<br>
 	        	<% end %>

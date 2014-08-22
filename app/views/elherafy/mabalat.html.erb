@@ -1,6 +1,6 @@
         <div class="jumbotron">
             <div class="container">
-                <h1><%= @workers.first.kind %></h1><br>
+                <h1 dir="rtl" style="color:green;"><%= @workers.first.kind %></h1><br>
                 <div class="row">
                     <meta charset="utf-8">
                     <title>Filter</title>
@@ -12,7 +12,7 @@
         <ul>
             <% @workers.sort{|x,y| x.average_rate <=> y.average_rate}.reverse.each do |worker| %>
                 <tr>
-        <div class="col-sm-7">
+        <div class="col-sm-12" dir="rtl">
         <% if worker.average_rate > 20 %>
           <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
         <% elsif worker.average_rate > 15 && worker.average_rate <= 20%>
@@ -23,16 +23,16 @@
           <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
         <% end %>
 
-        <strong>
+        <strong dir="rtl">
         <td><%= worker.name %></td><br>
         </strong>
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-12" dir="rtl">
         <td><%= worker.area %></td>
         <td><%= worker.status %></td>
         </div>
-        <div class="col-sm-3">
-        <td><%= link_to 'Show', worker, :style => "color:blue;" %></td>
+        <div class="col-sm-12">
+        <td dir="rtl"><%= link_to 'إظهار', worker, :style => "color:blue;" %></td>
         </div>
             <% end %>
         </ul>

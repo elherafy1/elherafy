@@ -17,15 +17,15 @@
                 </div>
                 <div class="field">
                   <%= f.label :المنطقة %><br>
-                  <%= f.select :area, options_for_select([['cairo','Cairo'],['giza', 'Giza']])%>
+                  <%= f.select :area, options_for_select([['القاهرة','Cairo'],['الجيزة', 'Giza']])%>
                 </div>
                 <div class="field">
                   <%= f.label :الوضع %><br>
-                  <%= f.select :status, options_for_select([['Available','Available'],['Busy', 'Busy']])%>
+                  <%= f.select :status, options_for_select([['متاح','Available'],['مشغول', 'Busy']])%>
                 </div>
                 <div class="field">
                   <%= f.label :النوع_العمل %><br>
-                  <%= f.select :kind, options_for_select([['naggar','naggar'],['mabalat', 'mabalat'],['sabak', 'sabak']])%>
+                  <%= f.select :kind, options_for_select([['نجار','naggar'],['مبلط', 'mabalat'],['سباك', 'sabak']])%>
                 </div>
                 
                 <%= f.submit  "تحديث", :class => "btn btn-primary" %>
