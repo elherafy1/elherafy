@@ -36,9 +36,9 @@
 						         خدمات المشرف<b class="caret"></b>
 					            </a>
 					            <ul class="dropdown-menu">
-					            	<li><%= link_to "اضافة عامل", new_worker_path%></li>
+					            	<li align="center"><%= link_to "اضافة عامل", new_worker_path%></li>
 					            	<li class="divider"></li>
-							    	<li><%= link_to "تسجيل الخروج", destroy_admin_session_path , method: "delete" %></li>
+							    	<li align="center"><%= link_to "تسجيل الخروج", destroy_admin_session_path , method: "delete" %></li>
 							    </ul>
 						    	<% else %>
 							    <li><%= link_to "تسجيل الدخول كمشرف", new_admin_session_path %></li>
@@ -51,11 +51,11 @@
 						          الخدمات <b class="caret"></b>
 					            </a>
 					            <ul class="dropdown-menu">
-					            	<li><%= link_to "العمال", workers_path %></li>
+					            	<li align="center"><%= link_to "العمال", workers_path %></li>
 					            	<li class="divider"></li>
-						            <li><%= link_to "مبلط", mabalat_path(:worker_type => 'mabalat') %> </li>
-						            <li><%= link_to "نجار", mabalat_path(:worker_type => 'naggar') %> </li>
-						            <li><%= link_to "سباك", mabalat_path(:worker_type => 'sabak') %> </li>
+						            <li align="center"><%= link_to "مبلط", mabalat_path(:worker_type => 'mabalat') %> </li>
+						            <li align="center"><%= link_to "نجار", mabalat_path(:worker_type => 'naggar') %> </li>
+						            <li align="center"><%= link_to "سباك", mabalat_path(:worker_type => 'sabak') %> </li>
 							    </ul>	
 
 			<li><%= link_to "للتواصل" , contact_path %></li>

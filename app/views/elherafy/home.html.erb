@@ -95,34 +95,41 @@
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="sr-only">Next</span>
       </a>
-    </div>
 
-<div class="row">
+<div class="jumbotron">
+      <div class="container">
+  <div class="row">
     <div class="col-sm-4">
-      <p>
-   <%= link_to (image_tag "http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'mabalat') %>
+      <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"> مبلط </li>
+    <%= link_to (image_tag "http://surreytiler.co.uk/wp-content/uploads/2013/02/surreytiler.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'mabalat') %>
          <strong>
-      <%= link_to 'مبلط', mabalat_path(:worker_type => 'mabalat'), :style => "position:center;", :class => "btn btn-primary", :class =>"form-control"  %> 
-      </strong> 
-    </div>
-    </p>
-    <div class="col-sm-4">
 
+      <% link_to 'مبلط', mabalat_path(:worker_type => 'mabalat'), :style => "position:center;", :class => "btn btn-primary", :class =>"form-control"  %> 
+      </strong> 
+    </div> 
+    <div class="col-sm-4">
+      <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"> نجار </li>
     <%= link_to (image_tag "http://www.courtyardboulder.com/wp-content/uploads/2013/05/General-Carpentry-Knowledge.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'naggar') %> 
        <strong>
-      <%= link_to 'نجار', mabalat_path(:worker_type => 'naggar'), :class => "btn btn-primary", :class =>"form-control"  %> 
+
+      <% link_to 'نجار', mabalat_path(:worker_type => 'naggar'), :class => "btn btn-primary", :class =>"form-control"  %> 
       </strong>
     </div>
     <div class="col-sm-4">
-
- <%= link_to (image_tag "http://www.kakaboyplumbers.co.za/images/plumbing_tool.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'sabak')%> 
+      <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"> سباك </li>
+    <%= link_to (image_tag "http://www.kakaboyplumbers.co.za/images/plumbing_tool.jpg", :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'sabak')%> 
       <strong>
-      <%= link_to 'سباك', mabalat_path(:worker_type => 'sabak'), :class => "btn btn-primary", :class =>"form-control"%> 
-      </strong>
-   </div>
-  
-    </div>
-</div>
 
+      <% link_to 'سباك', mabalat_path(:worker_type => 'sabak'), :class => "btn btn-primary", :class =>"form-control"%> 
+      </strong>     
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+
+      </div>
+    </div>
   </div>
 </div>
