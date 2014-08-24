@@ -113,7 +113,7 @@ RSpec.describe "AuthenticationPages", :type => :request do
         before { sign_in admin }
         describe " submitting a DELETE request to the worker#destroy action" do
           before { delete worker_path(@worker) }
-          it {response.should redirect_to(workers_path)
+          it {response.should redirect_to(workers_path) }
         end
       end
     end
