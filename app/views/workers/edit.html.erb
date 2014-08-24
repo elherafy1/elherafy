@@ -1,38 +1,44 @@
 <div class="jumbotron">
-      <div class="container">
+    <div class="container">
         <%= provide(:title, "Edit Worker")%>
-        <h1>Update Worker Profile</h1>
+
+        
+        <h1 dir="rtl" lang="ar" style = "color:green; font-size:30px;">تحديث الملف الشخصي للعامل</h1>
+
         <div class="row">
-          <div class="col-sm-8">
+          <div dir="rtl" lang="ar" class="col-sm-12">
             <%= form_for @worker do |f| %>
                  <%= render 'shared/error_messages', object: f.object %>
-                
+
                 <div class="form-group">
-                  <%= f.label :name %><br>
+                  <%= f.label I18n.t('name') %><br>
                   <%= f.text_field :name %>
                 <div class="field">
-                  <%= f.label :phone %><br>
+                  <%= f.label :الهاتف %><br>
                   <%= f.text_field :phone %>
                 </div>
                 <div class="field">
-                  <%= f.label :phone %><br>
-                  <%= f.text_field :phone %>
+
+
+                  <%= f.label :المنطقة %><br>
+                  <%= f.text_field :area %>
+
                 </div>
                 <div class="field">
-                  <%= f.label :status %><br>
-                  <%= f.select :status, options_for_select([['Available','Available'],['Busy', 'Busy']])%>
+                  <%= f.label :الوضع %><br>
+                  <%= f.select :status, options_for_select([['متاح','متاح'],['مشغول', 'مشغول']])%>
                 </div>
                 <div class="field">
-                  <%= f.label :kind %><br>
-                  <%= f.select :kind, options_for_select([['naggar','naggar'],['mabalat', 'mabalat'],['sabak', 'sabak']])%>
+                  <%= f.label :النوع_العمل %><br>
+                  <%= f.select :kind, options_for_select([['نجار','نجار'],['مبلط', 'مبلط'],['سباك', 'سباك']])%>
                 </div>
                 
-                <%= f.submit  "Save changes", :class => "btn btn-primary" %>
+                <%= f.submit  "تحديث", :class => "btn btn-primary", :id => "save" %>
                 
               <% end %>
+
           </div>
         </div>
-
-      </div>
+        <%= link_to 'الرجوع', @worker, :style => "color:blue;" %>
+    </div>
 </div>
-

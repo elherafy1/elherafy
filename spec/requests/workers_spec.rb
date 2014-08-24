@@ -1,20 +1,35 @@
+#encoding: UTF-8
 require 'rails_helper'
 
 RSpec.describe "Workers", :type => :request do
-
+let!(:admin) {FactoryGirl.create(:admin) }
 	before do
 		@review= FactoryGirl.create(:review)
+    @review1= FactoryGirl.create(:review)
+    @review2= FactoryGirl.create(:review)
+    @review3= FactoryGirl.create(:review)
 		@worker = FactoryGirl.build(:worker)
+    @mabalat = FactoryGirl.build(:mabalat)
+    @naggar = FactoryGirl.build(:naggar)
+    @sabak = FactoryGirl.build(:sabak)
 		@worker.reviews<<@review
 		@worker.save
-	end	
+          @mabalat.reviews<<@review1
+          @mabalat.save
+          @naggar.reviews<<@review2
+          @naggar.save
+          @sabak.reviews<<@review3
+          @sabak.save
+
+     sign_in admin
+  end	
   describe "GET /workers" do
     describe "Workers page" do
       it "workers" do
         visit workers_path
-  		 	page.should have_content ('Listing workers')
-  		  expect(page).to have_title('Workers')
-  		  page.should have_selector('h1','Listing workers')
+  		 	page.should have_content ('قائمة العمال')
+  		  #expect(page).to have_title('Workers')
+  		  page.should have_selector('h1','قائمة العمال')
   		  
   		end
   	end	
@@ -22,16 +37,16 @@ RSpec.describe "Workers", :type => :request do
   	describe "Workers page" do
       it "do new worker" do
         visit new_worker_path
-  		  page.should have_content ('New worker')
-  		  expect(page).to have_title('Add Worker')
-  		  page.should have_selector('h1','New worker')
+  		  page.should have_content('اضافة عامل')
+  		  #expect(page).to have_title('اضافة عامل')
+  		  page.should have_selector('h1','اضافة عامل')
   		end
   	end	
-    let(:admin) {FactoryGirl.create(:admin) }
-    before { sign_in admin }
+    
     describe "edit" do
-      before do
+      
 
+      before do
         visit edit_worker_path(@worker)
       end
 

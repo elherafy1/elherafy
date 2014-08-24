@@ -1,63 +1,91 @@
 <div class="jumbotron">
       <div class="container">
-        <div class="row">
-        	<title>Add Worker</title>
-<p id="notice"><%= notice %></p>
-
-<div class="col-sm-5">
-<p>
-  <strong>Name:</strong>
-  <%= @worker.name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @worker.phone %>
-</p>
+        <div class="row" dir="rtl">
+        	<title></title>
+          <p>
+          <h1 dir="rtl" lang="ar" style = "font-size:50px; color:green;"> بيانات العامل </h1>
+          </p>
 
 
-<p>
-  <strong>Area:</strong>
-  <%= @worker.area %>
-</p>
+<div class="col-sm-12">
+  <li class="list-group-item list-group-item-info">
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <table>
+    <tr>
+      <td>
 
-<p>
-  <strong>Status:</strong>
-  <%= @worker.status %>
-</p>
+      </td>
+      <td>
 
-<p>
-  <strong>kind:</strong>
-  <%= @worker.kind %>
-</p>
-<p>
+      </td>
+    </tr>
+  </table>
+  <strong>الاسم:</strong>
+  <%= @worker.name %><br>
+</p><br>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>الهاتف:</strong>
+  <%= @worker.phone %><br>
+</p><br>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>المنطقة:</strong>
+  <%= @worker.area %><br>
+</p><br>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>الوضع:</strong>
+  <%= @worker.status %><br>
+</p><br>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
+  <strong>النوع_العمل:</strong>
+  <%= @worker.kind %><br>
+</p><br>
+</li><br>
+<p dir="rtl" lang="ar" style = "font-size:25px;">
     <strong>
-      <%= link_to 'Review', new_worker_review_path(@worker), :class => "btn btn-primary"  %> 
+      <%= link_to ' أضف تقييم ', new_worker_review_path(@worker), :class => "btn btn-primary", :style => "font-size:25px; color:black;" %>
+
+      <% if admin_signed_in? %>
+      <%= link_to 'تعديل العامل', edit_worker_path(@worker), :style => "color:black; font-size:20px;", :class => "btn btn-primary"%> 
+      <%= link_to 'عرض التقييمات', worker_reviews_path(@worker), :class => "btn btn-primary", :style => "color:black; font-size:20px;" %> 
+      <%= link_to 'حذف', @worker, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary", :style => "color:red; font-size:20px;", :id => 'delete_worker' %> <br>
+      
+      <% end %>
       </strong><br>
 </p>
+
 </div>
-<div class="col-sm-6">
-  <p>
+
+<div class="divider" dir="rtl">
+  
+  <div class="col-sm-6" dir="rtl">
+  <p dir="rtl" lang="ar">
   <%= render 'workers/rates', :worker => @worker%>
   </p><br>
-
-  <p>
-  <%= render 'workers/lastrev', :worker => @worker %>
-  </p>
 </div>
 
-  <div class="col-sm-12">
+  <p>
+    <div class="col-sm-6">
+  <%= render 'workers/lastrev', :worker => @worker %>
+</div>
+  </p>
 
-<p>
+  </div>
+
+  <div class="col-sm-6">
+<div class="panel panel-default">
+  <div class="list-group-item list-group-item-success" >
+<p dir="rtl" lang="ar" style = "font-size:30px; color:green;">
   <td><img src="http://centerhillcampground.com/wp-content/uploads/2013/09/Custom-Icon-Design-Pretty-Office-9-Comment-edit1.ico" width="30" height="30"></td>
-  <strong>Comments</strong>
+  <strong>التعليقات</strong>
 </p>
+</div>
+<div class="panel-body">
 <p>
 
   <% @worker.get_comments.each do |review| %>
   <% if !review.comment.nil? %>
     <ol class="posts">
-        <div class="form-group">
+        <div class="form-group" dir="rtl" lang="ar">
       <span class="content">
         <td><img src="http://www.combinedbook.com/blog/wp-content/uploads/2014/08/comment_edit.png" width="30" height="30"></td>
         <%= review.comment %>
@@ -67,20 +95,19 @@
       <% end %>
   <% end %>
 </p>
+</div>
+</div>
 
-  </div>
+  </div><br>
 
-  <div class="col-sm-12">
+  <div class="col-sm-12" dir="rtl" lang="ar">
       
-      <% if admin_signed_in? %>
-      <%= link_to 'Edit', edit_worker_path(@worker), :style => "color:blue;"%> |
-      <%= link_to 'show reviews', worker_reviews_path(@worker), :style => "color:blue;" %> |
-      <%= link_to 'Destroy', @worker, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:blue;" %> |
-      <%= link_to 'Back', workers_path %>
+      <p>
+      <%= link_to 'الرجوع', workers_path, :style => "font-size:20px;"%>
+      </p>
+  </div><br>
 
-      <% end %>
-  </div>
 		</body></html>
         </div>
       </div>
-     <p dir="rtl" lang="ar" ></p>
+     

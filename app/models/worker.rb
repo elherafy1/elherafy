@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class Worker < ActiveRecord::Base
 	validates :name, presence: true
 	validates :phone, presence: true
@@ -10,8 +11,19 @@ class Worker < ActiveRecord::Base
 	validates_associated :reviews, :on => :create
 	accepts_nested_attributes_for :reviews
 		
+	def self.max_mabalat
+		worker = Worker.where(:kind => 'مبلط').sort{|x,y| x.average_rate <=> y.average_rate}.reverse.first
+	end
 
-	def average_rate
+	def self.max_sabak
+		worker = Worker.where(:kind => 'سباك').sort{|x,y| x.average_rate <=> y.average_rate}.reverse.first
+	end
+
+	def self.max_naggar
+		worker = Worker.where(:kind => 'نجار').sort{|x,y| x.average_rate <=> y.average_rate}.reverse.first
+	end
+
+	def average_rate		
 		rate =  Review.where(:worker_id => self.id).average(:price) + 
 				Review.where(:worker_id => self.id).average(:clean) + 
 				Review.where(:worker_id => self.id).average(:quilty) + 

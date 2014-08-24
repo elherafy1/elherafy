@@ -1,146 +1,144 @@
-<div class="jumbotron">
-      <div class="container">
-        <div class="row">
-<%= form_for(@worker) do |f| %>
-  <% if @worker.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
 
-      <ul>
-      <% @worker.errors.full_messages.each do |message| %>
-        <li><%= message %></li><br>
-      <% end %>
-      </ul>
+  <%= form_for(@worker) do |f| %>
+    <% if @worker.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
+
+        <ul>
+        <% @worker.errors.full_messages.each do |message| %>
+          <li><%= message %></li><br>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <% if f.object.new_record? %>
+    <%= f.fields_for :reviews do |review| %>
+
+  <div class="col-sm-12">
+
+    <div class="field">
+      <p dir="rtl" lang="ar">
+      <%= f.label t('name') %><br>
+      <%= f.text_field :name %>
+    </p>
     </div>
-  <% end %>
+    <div class="field">
+      <p dir="rtl" lang="ar">
+      <%= f.label :الهاتف %><br>
+      <%= f.text_field :phone %>
+      </p>
+    </div>
+    <div class="field">
+      <p dir="rtl" lang="ar">
+      <%= f.label :المنطقة %><br>
+      <%= f.text_field :area %>
+      </p>
+    </div>
+    <div class="field">
+      <p dir="rtl" lang="ar">
+      <%= f.label :الوضع %><br>
+      <%= f.select :status, options_for_select([['متاح','متاح'],['مشغول', 'مشغول']])%>
+      </p>
+    </div>
+    <div class="field">
+      <p dir="rtl" lang="ar">
+      <%= f.label :نوع_العمل %><br>
+      <%= f.select :kind, options_for_select([['نجار','نجار'],['مبلط', 'مبلط'],['سباك', 'سباك']])%>
+      </p><br>
+    </div>
+    </div><br>
 
-<div class="col-sm-5">
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :area %><br>
-    <%= f.select :area, options_for_select([['cairo','Cairo'],['giza', 'Giza']])%>
+<div class="col-sm-6">
+<p dir="rtl" lang="ar"  style = "color:green; font-size:40px;">التقييم</p><br>
+</div>
+   <div class="col-sm-12">
+    <p>
+    <p dir="rtl" lang="ar">
+        <strong><td><img src="http://picturesofmoney.org/wp-content/uploads/2013/04/Money-Bag.jpg" width="50" height="50"></td></strong>
+         <strong class="choice">السعر</strong>
+         </p>
+    <span class="star-rating">
+      <%= review.radio_button :price, 1 %><i></i>
+      <%= review.radio_button :price, 2 %><i></i>
+      <%= review.radio_button :price, 3 %><i></i>
+      <%= review.radio_button :price, 4 %><i></i>
+      <%= review.radio_button :price, 5 %><i></i>
+    </span>
+    </p>
+    </p>
+
+    <p>
+      <p dir="rtl" lang="ar">
+        <strong><td><img src="http://www.valleymaid.com/img/slide3.jpg" width="50" height="50"></td></strong>
+        <strong class="choice">النظافة</strong>
+      </p>
+    <span class="star-rating">
+      <%= review.radio_button :clean, 1 %><i></i>
+      <%= review.radio_button :clean, 2 %><i></i>
+      <%= review.radio_button :clean, 3 %><i></i>
+      <%= review.radio_button :clean, 4 %><i></i>
+      <%= review.radio_button :clean, 5 %><i></i>
+    </span>
+    </p>
+
+    <p>
+      <p dir="rtl" lang="ar">
+          <strong><td><img src="http://t1.ftcdn.net/jpg/00/09/46/22/400_F_9462265_vOevFlobdhEnXiwG4jTOGkVeeSq8Qz7B.jpg" width="50" height="50"></td></strong>
+        <strong class="choice">الجودة</strong>
+      </p>
+    <span class="star-rating">
+      <%= review.radio_button :quilty, 1 %><i></i>
+      <%= review.radio_button :quilty, 2 %><i></i>
+      <%= review.radio_button :quilty, 3 %><i></i>
+      <%= review.radio_button :quilty, 4 %><i></i>
+      <%= review.radio_button :quilty, 5 %><i></i>
+    </span>
+    </p>
+
+    <p>
+      <p dir="rtl" lang="ar">
+          <strong><td><img src="https://basictrainingacademy.files.wordpress.com/2012/05/china-drill-squad-training.jpg" width="50" height="50"></td></strong>
+        <strong class="choice">الانضباط</strong>
+      </p>
+    <span class="star-rating">
+      <%= review.radio_button :disicpline, 1 %><i></i>
+      <%= review.radio_button :disicpline, 2 %><i></i>
+      <%= review.radio_button :disicpline, 3 %><i></i>
+      <%= review.radio_button :disicpline, 4 %><i></i>
+      <%= review.radio_button :disicpline, 5 %><i></i>
+    </span>
+    </p>
+
+    <p>
+      <p dir="rtl" lang="ar">
+          <strong><td><img src="http://4.bp.blogspot.com/-feyoKdTvJ9Q/T-mqHS6JLNI/AAAAAAAADzU/xiONarI_kA4/s1600/ar132547604391036.jpg" width="50" height="50"></td></strong>
+    <strong class="choice">المعاملة</strong>
+  </p>
+    <span class="star-rating">
+      <%= review.radio_button :treatment, 1 %><i></i>
+      <%= review.radio_button :treatment, 2 %><i></i>
+      <%= review.radio_button :treatment, 3 %><i></i>
+      <%= review.radio_button :treatment, 4 %><i></i>
+      <%= review.radio_button :treatment, 5 %><i></i>
+    </span>
+    </p>
+
+    <div class="actions">
+      <p dir="rtl" lang="ar">
+      <%= f.submit " إنشاء عامل "%>
+      </p>
+      </div>
+      </p>
+      </div>
 
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.select :status, options_for_select([['Available','Available'],['Busy', 'Busy']])%>
-  </div>
-  <div class="field">
-    <%= f.label :kind %><br>
-    <%= f.select :kind, options_for_select([['naggar','naggar'],['mabalat', 'mabalat'],['sabak', 'sabak']])%>
-  </div>
 
-  <% if f.object.new_record? %>
-    <%= f.fields_for :comments do |comment| %>
+    
 
+      <% end %>
 
     <% end %>
-  <% end %>
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-  </div>
-     <div class="col-sm-5">
-
-<% if f.object.new_record? %>
-  <%= f.fields_for :reviews do |review| %>
     
-    <div class="col-sm-14">
-  <p>
-    <div class="col-sm-7">
-      <strong><td><img src="http://picturesofmoney.org/wp-content/uploads/2013/04/Money-Bag.jpg" width="50" height="50"></td></strong>
-    <strong class="choice">Price</strong>
-    </div>
-    <div class="col-sm-9">
-  <span class="star-rating">
-    <%= review.radio_button :price, 1 %><i></i>
-    <%= review.radio_button :price, 2 %><i></i>
-    <%= review.radio_button :price, 3 %><i></i>
-    <%= review.radio_button :price, 4 %><i></i>
-    <%= review.radio_button :price, 5 %><i></i>
-  </span>
-
-
-  </div>
-  </p>
-  <p>
-    <div class="col-sm-7">
-      <strong><td><img src="http://www.valleymaid.com/img/slide3.jpg" width="50" height="50"></td></strong>
-    <strong class="choice">Cleanness</strong>
-    </div>
-    <div class="col-sm-14">
-  <span class="star-rating">
-    <%= review.radio_button :clean, 1 %><i></i>
-    <%= review.radio_button :clean, 2 %><i></i>
-    <%= review.radio_button :clean, 3 %><i></i>
-    <%= review.radio_button :clean, 4 %><i></i>
-    <%= review.radio_button :clean, 5 %><i></i>
-  </span>
-  </div>
-  </p>
-    <p>
-      <div class="col-sm-7">
-        <strong><td><img src="http://t1.ftcdn.net/jpg/00/09/46/22/400_F_9462265_vOevFlobdhEnXiwG4jTOGkVeeSq8Qz7B.jpg" width="50" height="50"></td></strong>
-    <strong class="choice">Quality</strong>
-    </div>
-    <div class="col-sm-14">
-  <span class="star-rating">
-    <%= review.radio_button :quilty, 1 %><i></i>
-    <%= review.radio_button :quilty, 2 %><i></i>
-    <%= review.radio_button :quilty, 3 %><i></i>
-    <%= review.radio_button :quilty, 4 %><i></i>
-    <%= review.radio_button :quilty, 5 %><i></i>
-  </span>
-  </div>
-  </p>
-    <p>
-      <div class="col-sm-7">
-        <strong><td><img src="https://basictrainingacademy.files.wordpress.com/2012/05/china-drill-squad-training.jpg" width="50" height="50"></td></strong>
-    <strong class="choice">Discipline</strong>
-    </div>
-        <div class="col-sm-14">
-  <span class="star-rating">
-    <%= review.radio_button :disicpline, 1 %><i></i>
-    <%= review.radio_button :disicpline, 2 %><i></i>
-    <%= review.radio_button :disicpline, 3 %><i></i>
-    <%= review.radio_button :disicpline, 4 %><i></i>
-    <%= review.radio_button :disicpline, 5 %><i></i>
-  </span>
-  </div>
-  </p>
-    <p>
-      <div class="col-sm-7">
-        <strong><td><img src="http://4.bp.blogspot.com/-feyoKdTvJ9Q/T-mqHS6JLNI/AAAAAAAADzU/xiONarI_kA4/s1600/ar132547604391036.jpg" width="50" height="50"></td></strong>
-    <strong class="choice">Treatment</strong>
-    </div>
-    <div class="col-sm-14">
-  <span class="star-rating">
-    <%= review.radio_button :treatment, 1 %><i></i>
-    <%= review.radio_button :treatment, 2 %><i></i>
-    <%= review.radio_button :treatment, 3 %><i></i>
-    <%= review.radio_button :treatment, 4 %><i></i>
-    <%= review.radio_button :treatment, 5 %><i></i>
-  </span>
-  </div>
-  </p>
-
-  
   <% end %>
-<% end %>
-</div>
-
-<% end %>
-
-
-  </div>
-</div>

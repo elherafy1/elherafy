@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "comments/new"
   post "comments/create"
   get '/about' => "elherafy#about"
+  get '/contact' => "elherafy#contact"
   get '/mabalat' => "elherafy#mabalat"
   
 
