@@ -9,44 +9,81 @@
 
 <div class="col-sm-12">
   <li class="list-group-item list-group-item-info">
-<p dir="rtl" lang="ar" style = "font-size:25px;">
+
+<p dir="rtl" lang="ar">
   <table>
     <tr>
       <td>
-
+    <strong style = "font-size:25px;">الاسم:</strong>
       </td>
-      <td>
-
+      <td style = "font-size:25px;">
+    <%= @worker.name %><br>
       </td>
     </tr>
   </table>
-  <strong>الاسم:</strong>
-  <%= @worker.name %><br>
 </p><br>
-<p dir="rtl" lang="ar" style = "font-size:25px;">
-  <strong>الهاتف:</strong>
-  <%= @worker.phone %><br>
+
+<p dir="rtl" lang="ar">
+  <table>
+    <tr>
+      <td>
+    <strong style = "font-size:25px;">الهاتف:</strong>
+      </td>
+      <td style = "font-size:25px;">
+    <%= @worker.phone %><br>
+      </td>
+    </tr>
+  </table>
 </p><br>
-<p dir="rtl" lang="ar" style = "font-size:25px;">
-  <strong>المنطقة:</strong>
-  <%= @worker.area %><br>
+
+<p dir="rtl" lang="ar">
+  <table>
+    <tr>
+      <td>
+    <strong style = "font-size:25px;">المنطقة:</strong>
+      </td>
+      <td style = "font-size:25px;">
+    <%= @worker.area %><br>
+      </td>
+    </tr>
+  </table>
 </p><br>
-<p dir="rtl" lang="ar" style = "font-size:25px;">
-  <strong>الوضع:</strong>
-  <%= @worker.status %><br>
+
+<p dir="rtl" lang="ar">
+  <table>
+    <tr>
+      <td>
+    <strong style = "font-size:25px;">الوضع:</strong>
+      </td>
+      <td style = "font-size:25px;">
+    <%= @worker.status %><br>
+      </td>
+    </tr>
+  </table>
 </p><br>
-<p dir="rtl" lang="ar" style = "font-size:25px;">
-  <strong>النوع_العمل:</strong>
-  <%= @worker.kind %><br>
+
+<p dir="rtl" lang="ar">
+  <table>
+    <tr>
+      <td>
+    <strong style = "font-size:25px;">نوع_العمل:</strong>
+      </td>
+      <td style = "font-size:25px;">
+    <%= @worker.kind %><br>
+      </td>
+    </tr>
+  </table>
 </p><br>
+
 </li><br>
+
 <p dir="rtl" lang="ar" style = "font-size:25px;">
     <strong>
-      <%= link_to ' أضف تقييم ', new_worker_review_path(@worker), :class => "btn btn-primary", :style => "font-size:25px; color:black;" %>
+      <%= link_to ' أضف تقييم ', new_worker_review_path(@worker), :class => "btn btn-primary", :style => "font-size:20px; color:black;" %>
 
       <% if admin_signed_in? %>
-      <%= link_to 'تعديل العامل', edit_worker_path(@worker), :style => "color:black; font-size:20px;", :class => "btn btn-primary"%> 
-      <%= link_to 'عرض التقييمات', worker_reviews_path(@worker), :class => "btn btn-primary", :style => "color:black; font-size:20px;" %> 
+      <%= link_to 'تعديل العامل', edit_worker_path(@worker), :style => "color:white; font-size:20px;", :class => "btn btn-primary"%> 
+      <%= link_to 'عرض التقييمات', worker_reviews_path(@worker), :class => "btn btn-primary", :style => "color:white; font-size:20px;" %> 
       <%= link_to 'حذف', @worker, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary", :style => "color:red; font-size:20px;" %> <br>
       
       <% end %>

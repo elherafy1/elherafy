@@ -1,0 +1,31 @@
+<div class="jumbotron">
+      <div class="container" dir="rtl">
+        <div class="row">
+			<div class="col-sm-12">
+				<%= form_for @job do |f| %>
+
+			    <div class="field">
+			    <p dir="rtl" lang="ar">
+			      <%= f.label :اسم_المهنه %><br>
+			      <%= f.text_field :name %>
+			    </p>
+			    </div>
+
+			    <div class="field">
+			    <p dir="rtl" lang="ar">
+			      <%= f.label :الصوره %><br>
+			      <%= f.text_field :picture %>
+			    </p>
+			    </div>
+
+			    <div class="actions">
+			    <p dir="rtl" lang="ar">
+			      <%= f.submit " إنشاء مهنه "%>
+			    </p>
+			    </div>
+
+			    <% end %>
+			</div>
+    	</div>
+	</div>
+</div>

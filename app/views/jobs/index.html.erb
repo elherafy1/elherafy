@@ -1,0 +1,14 @@
+<div class="jumbotron">
+      <div class="container" dir="rtl">
+        <div class="row">
+        	<h1 style="color:green;">مهنة</h1><br>
+        	<% @jobs.each do |job| %>
+        	<p style="font-size:30px;">
+        	<img src="<%= job.picture %>", width="80" height="80">
+        	<%=job.name%>
+        	</p>
+        	<p><%= link_to 'إظهار', job %></p>
+        	<% end %>
+		</div>
+	</div>
+</div>

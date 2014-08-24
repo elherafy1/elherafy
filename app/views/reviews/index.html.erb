@@ -56,7 +56,7 @@
 	        		<%= r.price %> |
 	        	</p><br>
 	        		<p dir="rtl" lang="ar" >
-	        			<%= link_to 'تعديل', '#', :style => "color:blue;"%> |
+	        			<%= link_to 'تعديل',  edit_worker_review_path(@worker.id,r.id), :style => "color:blue;"%> |
 	        		<%= link_to 'حذف', worker_review_path(@worker.id,r.id), method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%> 
 	        	</p>
 	        	</p>

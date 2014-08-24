@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817072232) do
+ActiveRecord::Schema.define(version: 20140824095052) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20140817072232) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "jobs", force: true do |t|
+    t.string   "name"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "reviews", force: true do |t|
     t.integer  "price"
     t.integer  "clean"
@@ -40,7 +47,7 @@ ActiveRecord::Schema.define(version: 20140817072232) do
     t.string   "comment"
     t.integer  "worker_id"
     t.string   "client_name"
-    t.string  "client_phone"
+    t.integer  "client_phone"
     t.string   "client_email"
     t.string   "client_addres"
     t.datetime "created_at"
@@ -49,7 +56,7 @@ ActiveRecord::Schema.define(version: 20140817072232) do
 
   create_table "workers", force: true do |t|
     t.string   "name"
-    t.string  "phone"
+    t.integer  "phone"
     t.string   "area"
     t.string   "status"
     t.string   "kind"

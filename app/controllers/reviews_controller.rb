@@ -23,13 +23,30 @@ class ReviewsController < ApplicationController
 		end
 	end
 
+	def edit
+		@review = @worker.reviews.find(params[:id])
+  	end
+
+	def update
+		@review = @worker.reviews.find(params[:id])
+    respond_to do |format|
+      if @review.update(review_params)
+        format.html { redirect_to worker_reviews_path(@worker), notice: 'review was successfully updated.' }
+        format.json { render :show, status: :ok, location: @worker }
+      else
+        format.html { render :edit }
+        format.json { render json: worker_reviews_path(@worker).errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 	def destroy
 		@review.destroy
-	respond_to do |format|
-	  format.html { redirect_to worker_reviews_path(@worker) , notice: 'review was successfully destroyed.' }
-	  format.json { head :no_content }		
+		respond_to do |format|
+		  format.html { redirect_to worker_reviews_path(@worker) , notice: 'review was successfully destroyed.' }
+		  format.json { head :no_content }		
+		end
 	end
-end
 
 	private
 

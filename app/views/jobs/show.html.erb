@@ -1,0 +1,24 @@
+<div class="jumbotron">
+      <div class="container" dir='rtl'>
+        <div class="row">
+        	<h1 style="color:green;" align="center">بيانات المهنه</h1>
+        	<br>
+        	<P align="center">
+    		<%= image_tag @job.picture %><br>
+    		</P>
+	       	<li class="list-group-item list-group-item-info">
+	        	<p>
+	        	<strong style="font-size:20px;">اسم المهنه :</strong>
+	        	<%= @job.name %><br>
+	        	</p>
+	        	<p>
+	        	<strong style="font-size:20px;">عدد المقيدين :</strong><br>
+	        	</p>
+	        	</li>
+	        	<P style="font-size:20px;">
+	        	<%= link_to 'تعديل',  edit_job_path, :style => "color:blue;"%> |
+	    		<%= link_to 'حذف', '#', method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%>
+	    		</P>
+        </div>
+	</div>
+</div>
