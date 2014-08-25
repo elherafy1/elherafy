@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+	before_filter :authenticate_admin! , :except => [:show, :index]
 
 	def new
     	@job = Job.new
@@ -44,6 +45,15 @@ class JobsController < ApplicationController
   	def index
   		@jobs = Job.all
   	end
+
+  	def destroy
+  		@job = Job.find(params[:id])
+	    @job.destroy
+	    respond_to do |format|
+	      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+	      format.json { head :no_content }
+    end
+  end
 
   	private
 

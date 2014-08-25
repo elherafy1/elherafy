@@ -17,7 +17,7 @@
 	        	</li>
 	        	<P style="font-size:20px;">
 	        	<%= link_to 'تعديل',  edit_job_path, :style => "color:blue;"%> |
-	    		<%= link_to 'حذف', '#', method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%>
+	    		<%= link_to 'حذف', @job, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%>
 	    		</P>
         </div>
 	</div>
