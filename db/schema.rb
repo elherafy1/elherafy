@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20140824095052) do
     t.string   "comment"
     t.integer  "worker_id"
     t.string   "client_name"
-    t.integer  "client_phone"
+    t.string   "client_phone"
     t.string   "client_email"
     t.string   "client_addres"
     t.datetime "created_at"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20140824095052) do
 
   create_table "workers", force: true do |t|
     t.string   "name"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "area"
     t.string   "status"
     t.string   "kind"

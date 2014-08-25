@@ -1,7 +1,11 @@
         <div class="jumbotron">
             <div class="container">
-                <% if Worker.nil? %>
-                <% end %>
+
+                <% if !@worker.nil? %>
+                <h1 dir="rtl" style="color:green;"><%= @workers.first.kind %>ين</h1><br>
+                <% else %>
+                 <h1 dir="rtl" style="color:green;"> لا يوجد عمال من هذا النوع</h1><br>
+                 <% end %>   
 
                 <div class="row">
                     <meta charset="utf-8">
@@ -11,7 +15,9 @@
        
         <ul>
             <% @workers.sort{|x,y| x.average_rate <=> y.average_rate}.reverse.each do |worker| %>
-            <h1 dir="rtl" style="color:green;"><%= @workers.first.kind %>ين</h1><br>
+
+               
+
                 <tr>
         <div class="col-sm-12" dir="rtl">
         <% if worker.average_rate > 20 %>
@@ -39,6 +45,6 @@
         </ul>
     </body>
     </div>
-    
+
             </div>
         </div>

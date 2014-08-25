@@ -20,7 +20,7 @@
 
     <div class="field">
       <p dir="rtl" lang="ar">
-      <%= f.label :الاسم %><br>
+      <%= f.label t('name') %><br>
       <%= f.text_field :name %>
     </p>
     </div>
@@ -33,19 +33,19 @@
     <div class="field">
       <p dir="rtl" lang="ar">
       <%= f.label :المنطقة %><br>
-      <%= f.select :area, options_for_select([['القاهرة','Cairo'],['الجيزة', 'Giza']])%>
+      <%= f.text_field :area %>
       </p>
     </div>
     <div class="field">
       <p dir="rtl" lang="ar">
       <%= f.label :الوضع %><br>
-      <%= f.select :status, options_for_select([['متاح','Available'],['مشغول', 'Busy']])%>
+      <%= f.select :status, options_for_select([['متاح','متاح'],['مشغول', 'مشغول']])%>
       </p>
     </div>
     <div class="field">
       <p dir="rtl" lang="ar">
       <%= f.label :نوع_العمل %><br>
-      <%= f.select :kind, options_for_select([['نجار','naggar'],['مبلط', 'mabalat'],['سباك', 'sabak']])%>
+      <%= f.select :kind, options_for_select([['نجار','نجار'],['مبلط', 'مبلط'],['سباك', 'سباك']])%>
       </p><br>
     </div>
     </div><br>
@@ -127,7 +127,7 @@
 
     <div class="actions">
       <p dir="rtl" lang="ar">
-      <%= f.submit " إنشاء عامل "%>
+      <%= f.submit " إنشاء عامل ",  :id => "save_worker"%>
       </p>
       </div>
       </p>

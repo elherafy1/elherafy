@@ -17,24 +17,26 @@
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-<h1><%= Worker.max_mabalat.name %></h1>
-              <% if Worker.max_mabalat.average_rate > 20 %>
+              <% if @max_mabalat %>
+              <h1><%= @max_mabalat.name %></h1>
+              <% if @max_mabalat.average_rate > 20 %>
                 <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="80" height="80"></td>
-              <% elsif Worker.max_mabalat.average_rate > 15 && Worker.max_mabalat.average_rate <= 20%>
+              <% elsif @max_mabalat.average_rate > 15 && @max_mabalat.average_rate <= 20%>
                 <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="80" height="80"></td>
-              <% elsif Worker.max_mabalat.average_rate > 10 && Worker.max_mabalat.average_rate <= 15 %>
+              <% elsif @max_mabalat.average_rate > 10 && @max_mabalat.average_rate <= 15 %>
                 <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="80" height="80"></td>
               <% else %>
                 <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="80" height="80"></td>            
               <% end %>
-
+              
               
               <p>
-              <%= render 'elherafy/home', :worker => Worker.max_mabalat%>
+              <%= render 'elherafy/home', :worker => @max_mabalat%>
               </p><br>              
               <p></p>
               <p><strong style="font-size:30px;">مبلط</strong></p>
-              <p><a <%= link_to 'مزيد من المعلومات', Worker.max_mabalat , :style => "color:black;", :class => "btn btn-primary"%></a></p>
+              <p><a <%= link_to 'مزيد من المعلومات', @max_mabalat , :style => "color:black;", :class => "btn btn-primary"%></a></p>
+              <% end %>
             </div>
           </div>
         </div>
@@ -42,12 +44,13 @@
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-<h1><%= Worker.max_sabak.name %></h1>
+              <% if @max_sabak %>
+              <h1><%= @max_sabak.name %></h1>
               <% if Worker.max_sabak.average_rate > 20 %>
                 <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="80" height="80"></td>
-              <% elsif Worker.max_sabak.average_rate > 15 && Worker.max_sabak.average_rate <= 20%>
+              <% elsif @max_sabak.average_rate > 15 && @max_sabak.average_rate <= 20%>
                 <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="80" height="80"></td>
-              <% elsif Worker.max_sabak.average_rate > 10 && Worker.max_sabak.average_rate <= 15 %>
+              <% elsif @max_sabak.average_rate > 10 && @max_sabak.average_rate <= 15 %>
                 <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="80" height="80"></td>
               <% else %>
                 <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="80" height="80"></td>            
@@ -55,11 +58,12 @@
         
               
               <p>
-              <%= render 'elherafy/home', :worker => Worker.max_sabak%>
+              <%= render 'elherafy/home', :worker => @max_sabak%>
               </p><br>              
               <p></p>
               <p><strong style="font-size:30px;">سباك</strong></p>
-              <p><a <%= link_to 'مزيد من المعلومات', Worker.max_sabak , :style => "color:black;", :class => "btn btn-primary"%></a></p>
+              <p><a <%= link_to 'مزيد من المعلومات', @max_sabak , :style => "color:black;", :class => "btn btn-primary"%></a></p>
+              <% end %>
             </div>
           </div>
         </div>
@@ -67,12 +71,13 @@
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAFVVVQAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1><%= Worker.max_naggar.name %></h1>
-              <% if Worker.max_naggar.average_rate > 20 %>
+               <% if @max_naggar %>
+              <h1><%= @max_naggar.name %></h1>
+              <% if @max_naggar.average_rate > 20 %>
                 <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="80" height="80"></td>
-              <% elsif Worker.max_naggar.average_rate > 15 && Worker.max_naggar.average_rate <= 20%>
+              <% elsif @max_naggar.average_rate > 15 && @max_naggar.average_rate <= 20%>
                 <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="80" height="80"></td>
-              <% elsif Worker.max_naggar.average_rate > 10 && Worker.max_naggar.average_rate <= 15 %>
+              <% elsif @max_naggar.average_rate > 10 && @max_naggar.average_rate <= 15 %>
                 <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="80" height="80"></td>
               <% else %>
                 <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="80" height="80"></td>            
@@ -80,11 +85,12 @@
         
               
               <p>
-              <%= render 'elherafy/home', :worker => Worker.max_naggar%>
+              <%= render 'elherafy/home', :worker => @max_naggar%>
               </p><br>              
               <p></p>
               <p><strong style="font-size:30px;">نجار</strong></p>
-              <p><a <%= link_to 'مزيد من المعلومات', Worker.max_naggar , :style => "color:black;", :class => "btn btn-primary"%></a></p>
+              <p><a <%= link_to 'مزيد من المعلومات', @max_naggar , :style => "color:black;", :class => "btn btn-primary"%></a></p>
+              <% end %>
             </div>
           </div>
         </div>

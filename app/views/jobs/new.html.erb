@@ -3,6 +3,8 @@
         <div class="row">
         	<%= form_for(@job) do |f| %>
 
+          <h1 dir="rtl" lang="ar"  style = "color:green;">إضافة مهنه</h1><br>
+
   <div class="col-sm-12">
 
     <div class="field">
@@ -21,7 +23,7 @@
 
     <div class="actions">
     <p dir="rtl" lang="ar">
-      <%= f.submit " إنشاء مهنه "%>
+      <%= f.submit " إنشاء مهنه ", :id => "save_job"%>
     </p>
     </div>
       
