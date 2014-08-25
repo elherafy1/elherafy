@@ -2,6 +2,7 @@
 require 'rails_helper'
 
 RSpec.describe "Jobs", :type => :request do
+  subject { page }
 let!(:admin) {FactoryGirl.create(:admin) }
 let(:job) {FactoryGirl.create(:job) }
   before do
@@ -24,10 +25,6 @@ let(:job) {FactoryGirl.create(:job) }
 
      sign_in admin
   end 
-
-
-      subject { page }
- 
 
 
   describe "GET /jobs" do
@@ -67,9 +64,10 @@ let(:job) {FactoryGirl.create(:job) }
     describe "with invalid info" do
       before { click_button 'save_button'}
       specify { response.should redirect_to(@jobs)}
-             it "should have title"
+             it "should have title" do
         expect(page).to have_title('بيانات المهنه')
          end
+       end
 
     end
 
@@ -107,9 +105,10 @@ let(:job) {FactoryGirl.create(:job) }
     describe "with invalid info" do
       before { click_button 'save_job'}
        specify { response.should redirect_to(@jobs)}
-       it "should have title"
+       it "should have title" do
         expect(page).to have_title('بيانات المهنه')
          end
+       end
 
     end
 
@@ -146,9 +145,10 @@ let(:job) {FactoryGirl.create(:job) }
     describe "with invalid info" do
          before { click_button 'save_button'}
              specify { response.should redirect_to(@jobs)}
-             it "should have title"
+             it "should have title" do
              expect(page).to have_title('بيانات المهنه')
               end
+            end
 
     end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824095052) do
+ActiveRecord::Schema.define(version: 20140825070458) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 20140824095052) do
     t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "job_id"
   end
+
+  add_index "workers", ["job_id"], name: "index_workers_on_job_id"
 
 end

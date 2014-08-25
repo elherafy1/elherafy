@@ -12,6 +12,8 @@ class ElherafyController < ApplicationController
 
 	def create
 		
+
+    	@jobs = Job.all		
 	end
 
 	def contact
