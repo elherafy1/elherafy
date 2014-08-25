@@ -1,4 +1,5 @@
-	require 'rails_helper'
+#encoding: UTF-8
+require 'rails_helper'
 
 RSpec.describe "Admins", :type => :request do
  
@@ -30,25 +31,25 @@ RSpec.describe "Admins", :type => :request do
 		end
 		describe "with invalid info" do
 		  before { 
-		    fill_in "Name", with: ""
-		  	click_button "Save changes" }
-		  it { should have_content('error') }
+		    fill_in 'worker_name', with: ""
+		  	click_button "save" }
+		  it { should have_content('خطء') }
 
 		end
 
 		describe "with valid info" do
 			let(:new_name) { "New Name" }
 			let(:new_area) { "New Area" }
-			let(:new_status) { "New Status"}
+			let(:new_status) { "مشغول"}
 			before do
-				fill_in "Name", with: new_name
-				select 'giza', from:'Area'
-				select 'Busy', from:'Status'
-				select 'naggar', from:'Kind'
-			    click_button "Save changes"
+				fill_in 'worker_name', with: new_name
+				fill_in 'worker_area', with: new_area
+				select 'مشغول', from:'worker_status'
+
+			    click_button "save"
 			end
 
-  	it { should have_link('Sign out', href: destroy_admin_session_path) }
+  	it { should have_link('sign_out', href: destroy_admin_session_path) }
   	it { should have_selector('div.alert.alert-success') }
   	specify { @worker.reload.name.should == new_name }
   	specify { @worker.reload.area.should == new_area }

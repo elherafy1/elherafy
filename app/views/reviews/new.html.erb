@@ -7,7 +7,7 @@
 	<%= form_for([@worker, @review]) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
-    	<h2 dir="rtl"> يوجد نقص بالبيانات: <%= pluralize(@review.errors.count, "خطء") %></h2>
+    	<h2 dir="rtl"> يوجد نقص بالبيانات: <%= @review.errors.count %> اخطاء </h2>
 
       <ul>
       <% @review.errors.full_messages.each do |message| %>

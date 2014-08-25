@@ -1,23 +1,28 @@
 <div class="jumbotron">
     <div class="container">
         <%= provide(:title, "Edit Worker")%>
+
         
         <h1 dir="rtl" lang="ar" style = "color:green; font-size:30px;">تحديث الملف الشخصي للعامل</h1>
+
         <div class="row">
           <div dir="rtl" lang="ar" class="col-sm-12">
             <%= form_for @worker do |f| %>
                  <%= render 'shared/error_messages', object: f.object %>
 
                 <div class="form-group">
-                  <%= f.label :الاسم %><br>
+                  <%= f.label I18n.t('name') %><br>
                   <%= f.text_field :name %>
                 <div class="field">
                   <%= f.label :الهاتف %><br>
                   <%= f.text_field :phone %>
                 </div>
                 <div class="field">
+
+
                   <%= f.label :المنطقة %><br>
-                  <%= f.select :area, options_for_select([['القاهرة','القاهرة'],['الجيزة', 'الجيزة']])%>
+                  <%= f.text_field :area %>
+
                 </div>
                 <div class="field">
                   <%= f.label :الوضع %><br>
@@ -28,7 +33,7 @@
                   <%= f.select :job_id, Job.all.collect{|j| [j.name, j.id]}%>
                 </div>
                 
-                <%= f.submit  "تحديث", :class => "btn btn-primary" %>
+                <%= f.submit  "تحديث", :class => "btn btn-primary", :id => "save" %>
                 
               <% end %>
 

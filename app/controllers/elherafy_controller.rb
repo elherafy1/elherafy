@@ -1,8 +1,9 @@
 class ElherafyController < ApplicationController
 
 	def home
-    	@jobs = Job.all		
+    	@jobs = Job.all	
 	end
+
 
 	def contact
 		

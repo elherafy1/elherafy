@@ -39,7 +39,7 @@
 					            	<li align="center"><%= link_to "اضافة مهنه", new_job_path %></li>
 					            	<li align="center"><%= link_to "اضافة عامل", new_worker_path %></li>
 					            	<li class="divider"></li>
-							    	<li align="center"><%= link_to "تسجيل الخروج", destroy_admin_session_path , method: "delete" %></li>
+							    	<li align="center"><%= link_to "تسجيل الخروج", destroy_admin_session_path , method: "delete" , :id => "sign_out"%></li>
 							    </ul>
 						    	<% else %>
 							    <li><%= link_to "تسجيل الدخول كمشرف", new_admin_session_path %></li>

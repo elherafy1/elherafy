@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
 
   root 'elherafy#home'
+
   get "reviews/new"
   post "reviews/create"
   get "comments/new"

@@ -8,10 +8,9 @@
 
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <% i = -1 %>
-        <% @jobs.each do |job| %>
+        <% @jobs.each_with_index do |job, i| %>
         <% if !job.workers.empty? %>
-        <li data-target="#myCarousel" data-slide-to="<%=i+1%>" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="<%=i%>" class="<%= 'active' if job == Job.first %>"></li>
         <% end %>
         <% end %>
       </ol>
@@ -21,18 +20,16 @@
 
         <div class="item <%= 'active' if job == Job.first %>">
 
-          
-
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-          <h1><%= Job.max_mabalat(job.name).name %></h1>
+          <h1><%= job.max_mabalat.name %></h1>
 
-              <% if Job.max_mabalat(job.name).average_rate > 20 %>
+              <% if job.max_mabalat.average_rate > 20 %>
                 <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="80" height="80"></td>
-              <% elsif Job.max_mabalat(job.name).average_rate > 15 && Job.max_mabalat(job.name).average_rate <= 20%>
+              <% elsif job.max_mabalat.average_rate > 15 && job.max_mabalat.average_rate <= 20%>
                 <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="80" height="80"></td>
-              <% elsif Job.max_mabalat(job.name).average_rate > 10 && Job.max_mabalat(job.name).average_rate <= 15 %>
+              <% elsif job.max_mabalat.average_rate > 10 && job.max_mabalat.average_rate <= 15 %>
                 <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="80" height="80"></td>
               <% else %>
                 <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="80" height="80"></td>            
@@ -47,9 +44,11 @@
               <p><a <%= link_to 'مزيد من المعلومات', Job.max_mabalat(job.name) , :style => "color:black;", :class => "btn btn-primary"%></a></p>
             </div>
           </div>
+
         </div>
-                <% end %>
+        <% end %>
         <% end %>  
+
       </div>
 
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -70,6 +69,7 @@
 <% @jobs.each do |job| %>
 <div class="col-sm-4">
       <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"><%= job.name %>: <%= job.workers.count %> عامل</li>
+
 
     <%= link_to (image_tag job.picture, :height=>"300", :style => "width:100%"), job %>
 </div>

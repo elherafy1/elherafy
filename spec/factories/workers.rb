@@ -4,8 +4,32 @@ FactoryGirl.define do
   factory :worker do
     name "MyString"
     area "MyString"
-    status "MyString"
+    status "New Status"
     kind  "MyString"
-     phone "1234567"
+     phone "MyString"
+  end
+
+  factory :mabalat, :class => Worker do
+    name "MyString"
+    area "MyString"
+    status "New Status"
+    kind  "mabalat"
+     phone "MyString"
+  end
+
+    factory :naggar, :class => Worker do
+    name "MyString"
+    area "MyString"
+    status "New Status"
+    kind  "naggar"
+     phone "MyString"
+  end
+
+     factory :sabak, :class => Worker do
+    name "MyString"
+    area "MyString"
+    status "New Status"
+    kind  "sabak"
+     phone "MyString"
   end
 end

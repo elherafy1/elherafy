@@ -18,6 +18,74 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      review: ss
+      worker/reviews: 
+        review:lkj
+    attributes:
+      review:
+        review: نستلاين
+        price: "السعر"
+        clean: النظافة
+        quilty: الجودة 
+        disicpline: الانضباط
+        treatment: المعاملة
+        comment: التعليق
+        client_name: اسم العميل
+        client_phone: هاتف العميل
+        client_email: بريد الإلكتروني العميل
+        client_addres: عنوان العميل
+      worker:
+        name: الاسم
+        phone: الهاتف
+        area: المكان
+        status: الحاله
+        reviews: التقييمات
+      worker/reviews:
+        price: "السعر"
+        clean: النظافة
+        quilty: الجودة
+        disicpline: الانضباط
+        treatment: المعاملة
+        review: aa
+      job:
+        name: الاسم
+        picture: الصوره
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      Reviews: التقييمات
+      accepted: must be accepted
+      blank: لا يمكن أن يكون فارغا
+      confirmation: لا يطابق التأكيدا
+      empty: لا يمكن أن تكون فارغة
+      equal_to: يجب أن يكون مساويا ل %{count}
+      even: يجب أن يكون زوجي
+      exclusion: محجوز
+      greater_than: يجب أن تكون أكبر من %{count}
+      greater_than_or_equal_to: يجب أن تكون أكبر من أو يساوي %{count}
+      inclusion: is not included in the list
+      invalid: غير صالح
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      taken: قد تم اتخاذه من قبل
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} اخطاء %{model} من ان يتم حفظها'

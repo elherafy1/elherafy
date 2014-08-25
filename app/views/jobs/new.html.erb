@@ -7,7 +7,7 @@
         	<%= form_for(@job) do |f| %>
           <% if @job.errors.any? %>
       <div id="error_explanation">
-        <h2 dir="rtl"> يوجد نقص بالبيانات: <%= pluralize(@job.errors.count, "خطء") %></h2>
+        <h2 dir="rtl"> يوجد نقص بالبيانات: <%= @job.errors.count %> اخطاء</h2>
 
         <ul>
         <% @job.errors.full_messages.each do |message| %>
@@ -16,6 +16,8 @@
         </ul>
       </div>
     <% end %>
+
+          <h1 dir="rtl" lang="ar"  style = "color:green;">إضافة مهنه</h1><br>
 
 
   <div class="col-sm-12">
@@ -36,7 +38,7 @@
 
     <div class="actions">
     <p dir="rtl" lang="ar">
-      <%= f.submit " إنشاء مهنه "%>
+      <%= f.submit " إنشاء مهنه ", :id => "save_job"%>
     </p>
     </div>
       
