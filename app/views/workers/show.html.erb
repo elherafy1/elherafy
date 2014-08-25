@@ -69,7 +69,7 @@
     <strong style = "font-size:25px;">نوع_العمل:</strong>
       </td>
       <td style = "font-size:25px;">
-    <%= @worker.kind %><br>
+    <%= Job.find_by_id(@worker.job_id).name %><br>
       </td>
     </tr>
   </table>

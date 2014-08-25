@@ -13,9 +13,10 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <div class="item active">
+        <% @jobs.each do |job| %>
+        <div class="item <%= 'active' if job == Job.first %>">
 
-          <% @jobs.each do |job| %>
+          
 
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
           <div class="container">
@@ -42,10 +43,8 @@
             </div>
           </div>
         </div>
-        <div class="item">
-
-       <% end %>   
-
+        <% end %>  
+      </div>
 
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="sr-only">Previous</span>
@@ -53,26 +52,31 @@
       <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
         <span class="sr-only">Next</span>
       </a>
+    
+  </div>
+
 
 <div class="jumbotron">
       <div class="container">
   <div class="row">
-    <div class="col-sm-4">
+    
 
 <% @jobs.each do |job| %>
-
+<div class="col-sm-4">
       <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"><%= job.name %></li>
 
-    <%= link_to (image_tag job.picture, :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'mabalat') %>
-
+    <%= link_to (image_tag job.picture, :height=>"300", :style => "width:100%"), job %>
+</div>
 <% end %> 
-  </div>
+  
 
   </div>
   </div>
 
 
       </div>
+
+
     </div>
   </div>
 </div>
