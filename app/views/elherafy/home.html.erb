@@ -65,7 +65,8 @@
 <div class="col-sm-4">
       <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"><%= job.name %></li>
 
-    <%= link_to (image_tag job.picture, :height=>"300", :style => "width:100%"), mabalat_path(:worker_type => 'mabalat') %>
+
+    <%= link_to (image_tag job.picture, :height=>"300", :style => "width:100%"), job %>
 </div>
 <% end %> 
   

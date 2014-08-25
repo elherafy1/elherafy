@@ -65,7 +65,7 @@ let(:job) {FactoryGirl.create(:job) }
       before { click_button 'save_button'}
       specify { response.should redirect_to(@jobs)}
              it "should have title" do
-        expect(page).to have_title('بيانات المهنه')
+        expect(page).to have_content('بيانات المهنه')
          end
        end
 
@@ -106,7 +106,7 @@ let(:job) {FactoryGirl.create(:job) }
       before { click_button 'save_job'}
        specify { response.should redirect_to(@jobs)}
        it "should have title" do
-        expect(page).to have_title('بيانات المهنه')
+        expect(page).to have_content('بيانات المهنه')
          end
        end
 
@@ -146,7 +146,7 @@ let(:job) {FactoryGirl.create(:job) }
          before { click_button 'save_button'}
              specify { response.should redirect_to(@jobs)}
              it "should have title" do
-             expect(page).to have_title('بيانات المهنه')
+             expect(page).to have_content('بيانات المهنه')
               end
             end
 

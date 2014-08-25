@@ -2,6 +2,8 @@
 require 'rails_helper'
 
 RSpec.describe "Workers", :type => :request do
+     subject { page }
+
 let!(:admin) {FactoryGirl.create(:admin) }
 	before do
 		@review= FactoryGirl.create(:review)
@@ -43,84 +45,127 @@ let!(:admin) {FactoryGirl.create(:admin) }
   		end
   	end	
     
-    describe "edit" do
-      
+  describe "edit" do
 
       before do
         visit edit_worker_path(@worker)
-         page.should have_content('تحديث الملف الشخصي للعامل')
-         page.should have_selector('h1','تحديث الملف الشخصي للعامل')
-      end
+                page.should have_content('تحديث الملف الشخصي للعامل')
 
-      describe "page" do
-        	
-            it{ page.should have_selector('h1','Update Worker Profile')}
-            it{ expect(page).to have_title('Edit Worker')} 
-        end
-
-    describe "with invalid info" do
-      before { click_button "Update Worker"}
-
-    end
-
-    describe "with valid info" do
-      let(:new_name) {"New Name"}
-      let(:new_area) {"New Area"}
-      let(:new_status) {"New Status"}
-      let(:new_kind) {"New Kind"}
-      
-    
-        before do
-            fill_in "Name",   with: new_name
-            fill_in "Area",   with: new_area
-            fill_in "status",   with: new_status
-            fill_in "Kind",   with: new_kind
-            click_button "Update Worker"
-        end
-    
-
-    end
-  end
-
-      describe "create" do
-      
-
-      before do
-        visit new_worker_path(@worker)
-         page.should have_content('إضافة عامل')
-         page.should have_selector('h1','إضافة عامل')
       end
 
       describe "page" do
           
-            #it{ page.should have_selector('h1','Update Worker Profile')}
-            #it{ expect(page).to have_title('Edit Worker')} 
+            it{ page.should have_content('تحديث الملف الشخصي للعامل')}
+            it{ page.should have_button('save')}
         end
 
     describe "with invalid info" do
-      before { click_button 'save_worker'}
+      before { click_button 'save'}
+      specify { response.should redirect_to(@jobs)}
+             it "should have title" do
+        expect(page).to have_content('بيانات المهنه')
+         end
+       end
 
     end
 
     describe "with valid info" do
       let(:new_name) {"New Name"}
-      let(:new_area) {"New Area"}
-      let(:new_status) {"New Status"}
-      let(:new_kind) {"New Kind"}
+      let(:new_image) {"New Image"}
+
       
     
         before do
             fill_in "Name",   with: new_name
-            fill_in "Area",   with: new_area
-            fill_in "status",   with: new_status
-            fill_in "Kind",   with: new_kind
-            click_button 'save_worker'
+            fill_in "Image",   with: new_image
+
+            click_button 'save_button'
         end
     
 
     end
   end
 
+     describe "create" do
+
+      before do
+        visit new_job_path(@job)
+                page.should have_content('اسم_المهنه')
+
+      end
+
+      describe "page" do
+          
+            it{ page.should have_content('إضافة مهنه')}
+            it{ page.should have_button('save_job')}
+        end
+
+    describe "with invalid info" do
+      before { click_button 'save_job'}
+       specify { response.should redirect_to(@jobs)}
+       it "should have title" do
+        expect(page).to have_content('بيانات المهنه')
+         end
+       end
+
     end
+
+    describe "with valid info" do
+      let(:new_name) {"New Name"}
+      let(:new_image) {"New Image"}
+
+      
+    
+        before do
+            fill_in "Name",   with: new_name
+            fill_in "Image",   with: new_image
+
+            click_button 'save_job'
+        end
+    
+
+    end
+  end
+
+       describe "update" do
+
+      before do
+        visit edit_job_path(@job)
+                page.should have_content('اسم_المهنه')
+
+      end
+
+      describe "page" do
+              it{ page.should have_content('إضافة مهنه')}
+              it{ page.should have_button('save_button')}
+        end
+
+    describe "with invalid info" do
+         before { click_button 'save_button'}
+             specify { response.should redirect_to(@jobs)}
+             it "should have title" do
+             expect(page).to have_content('بيانات المهنه')
+              end
+            end
+
+    end
+
+    describe "with valid info" do
+      let(:new_name) {"New Name"}
+      let(:new_image) {"New Image"}
+
+      
+    
+        before do
+            fill_in "Name",   with: new_name
+            fill_in "Image",   with: new_image
+
+            click_button 'save_job'
+        end
+    
+
+    end
+
+
+
   
-end

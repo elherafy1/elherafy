@@ -130,6 +130,25 @@
         null,
         null
       ],
+      "C:/Users/sarah/Desktop/herafy/elherafy/app/models/job.rb": [
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
       "C:/Users/sarah/Desktop/herafy/elherafy/app/controllers/elherafy_controller.rb": [
         1,
         null,
@@ -165,6 +184,6 @@
         null
       ]
     },
-    "timestamp": 1408956466
+    "timestamp": 1408958219
   }
 }

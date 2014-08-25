@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-08-25T11:47:46+03:00">2014-08-25T11:47:46+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-08-25T12:16:59+03:00">2014-08-25T12:16:59+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">81.54%</span></span>
+    (<span class="covered_percent"><span class="yellow">80.82%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         17.61
+         15.51
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>7</b> files in total.
-    <b>65</b> relevant lines. 
-    <span class="green"><b>53</b> lines covered</span> and
-    <span class="red"><b>12</b> lines missed </span>
+    <b>8</b> files in total.
+    <b>73</b> relevant lines. 
+    <span class="green"><b>59</b> lines covered</span> and
+    <span class="red"><b>14</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -98,6 +98,16 @@
         <td>2</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#32d681dcd0b8fc2b1d13b1791040ef96e72bf9a3" class="src_link" title="app/models/job.rb">app/models/job.rb</a></td>
+        <td class="red strong">75.0 %</td>
+        <td>17</td>
+        <td>8</td>
+        <td>6</td>
+        <td>2</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -186,20 +196,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="yellow">81.4%</span></span>
+    (<span class="covered_percent"><span class="yellow">80.39%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         37.5
+         28.33
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
-    <b>3</b> files in total.
-    <b>43</b> relevant lines. 
-    <span class="green"><b>35</b> lines covered</span> and
-    <span class="red"><b>8</b> lines missed </span>
+    <b>4</b> files in total.
+    <b>51</b> relevant lines. 
+    <span class="green"><b>41</b> lines covered</span> and
+    <span class="red"><b>10</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -223,6 +233,16 @@
         <td>2</td>
         <td>0</td>
         <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#32d681dcd0b8fc2b1d13b1791040ef96e72bf9a3" class="src_link" title="app/models/job.rb">app/models/job.rb</a></td>
+        <td class="red strong">75.0 %</td>
+        <td>17</td>
+        <td>8</td>
+        <td>6</td>
+        <td>2</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -899,6 +919,126 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="32d681dcd0b8fc2b1d13b1791040ef96e72bf9a3">
+  <div class="header">
+    <h3>app/models/job.rb</h3>
+    <h4><span class="red">75.0 %</span> covered</h4>
+    <div>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby">#encoding: UTF-8</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Job &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	validates :name, presence: true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	validates :picture, presence: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	has_many :workers, :dependent =&gt; :destroy</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	def self.worker_count(name)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="10">
+          
+          
+          <code class="ruby">		Job.find_by_name(name).workers.count	</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">	def self.max_mabalat(name)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">		worker = Job.find_by_name(name).workers.sort{|x,y| x.average_rate &lt;=&gt; y.average_rate}.reverse.first</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">	end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>

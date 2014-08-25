@@ -12,7 +12,7 @@
 	        	<%= @job.name %><br>
 	        	</p>
 	        	<p>
-	        	<strong style="font-size:20px;">عدد المقيدين :</strong><br>
+	        	<strong style="font-size:20px;">عدد المقيدين :</strong>
 	        	<%= Job.worker_count(@job.name) %>
 	        	</p>
 	        	</li>
@@ -20,6 +20,44 @@
 	        	<%= link_to 'تعديل',  edit_job_path, :style => "color:blue;"%> |
 	    		<%= link_to 'حذف', @job, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%>
 	    		</P>
+
+	    		<body>
+       
+			        <ul>
+
+			        	<h1 dir="rtl" style="color:green;"><%= @job.name %>ين</h1><br>
+			            <% @job.workers.sort{|x,y| x.average_rate <=> y.average_rate}.reverse.each do |worker| %>
+			            <p>
+			                <tr>
+			        <div class="col-sm-12" dir="rtl">
+			        <% if worker.average_rate > 20 %>
+			          <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="30" height="30"></td>
+			        <% elsif worker.average_rate > 15 && worker.average_rate <= 20%>
+			          <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="30" height="30"></td>
+			        <% elsif worker.average_rate > 10 && worker.average_rate <= 15 %>
+			          <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="30" height="30"></td>
+			        <% else %>
+			          <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="30" height="30"></td>            
+			        <% end %>
+
+			        <strong dir="rtl">
+			        <td><%= worker.name %></td><br>
+			        </strong>
+			        </div>
+			        <div class="col-sm-12" dir="rtl">
+			        <td><%= worker.area %></td>
+			        <td><%= worker.status %></td>
+			        </div>
+			        <div class="col-sm-12" align="left">
+			        <td dir="rtl"><%= link_to 'إظهار', worker, :style => "color:blue;" %></td>
+			        </div>
+			    </tr>
+			    </p><br>
+			    <p class="divider"></p>
+			            <% end %>
+			        </ul>
+			    </body>
+
         </div>
 	</div>
 </div>

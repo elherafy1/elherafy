@@ -12,7 +12,7 @@
 
 <title>ELherafy</title>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding-bottom:2px;">
 		<div class="container">
 
 			
@@ -55,9 +55,9 @@
 					            	<li align="center"><%= link_to "المهنه", jobs_path %></li>
 					            	<li align="center"><%= link_to "العمال", workers_path %></li>
 					            	<li class="divider"></li>
-						            <li align="center"><%= link_to "مبلط", mabalat_path(:worker_type => 'مبلط') %> </li>
-						            <li align="center"><%= link_to "نجار", mabalat_path(:worker_type => 'نجار') %> </li>
-						            <li align="center"><%= link_to "سباك", mabalat_path(:worker_type => 'سباك') %> </li>
+					            	<% Job.all.each do |job| %>
+						            <li align="center"><%= link_to job.name, job %> </li>
+						            <% end %>
 							    </ul>	
 
 			<li><%= link_to "للتواصل" , contact_path %></li>

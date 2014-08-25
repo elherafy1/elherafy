@@ -33,11 +33,8 @@
     <div class="field">
       <p dir="rtl" lang="ar">
       <%= f.label :المنطقة %><br>
-<<<<<<< HEAD
       <%= f.text_field :area %>
-=======
-      <%= f.select :area, options_for_select([['القاهرة','القاهرة'],['الجيزة', 'الجيزة']])%>
->>>>>>> 4e2879c9f63b3e53d2b7bbee973907ee5db14ec3
+
       </p>
     </div>
     <div class="field">
@@ -49,11 +46,9 @@
     <div class="field">
       <p dir="rtl" lang="ar">
       <%= f.label :نوع_العمل %><br>
-<<<<<<< HEAD
-      <%= f.select :kind, options_for_select([['نجار','نجار'],['مبلط', 'مبلط'],['سباك', 'سباك']])%>
-=======
+
       <%= f.select :job_id, Job.all.collect{|j| [j.name, j.id]}%>
->>>>>>> 4e2879c9f63b3e53d2b7bbee973907ee5db14ec3
+
       </p><br>
     </div>
     </div><br>
