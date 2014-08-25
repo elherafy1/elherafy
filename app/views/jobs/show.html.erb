@@ -3,8 +3,8 @@
         <div class="row">
         	<h1 style="color:green;" align="center">بيانات المهنه</h1>
         	<br>
-        	<P align="center">
-    		<%= image_tag @job.picture %><br>
+        	<P align="center" >
+    		<img src="<%= @job.picture %>", height="300", width="300" ><br>
     		</P>
 	       	<li class="list-group-item list-group-item-info">
 	        	<p>
@@ -16,10 +16,12 @@
 	        	<%= Job.worker_count(@job.name) %>
 	        	</p>
 	        	</li>
-	        	<P style="font-size:20px;">
+	        	<% if admin_signed_in? %>
+	        	<P style="font-size:20px;" align="left">
 	        	<%= link_to 'تعديل',  edit_job_path, :style => "color:blue;"%> |
 	    		<%= link_to 'حذف', @job, method: :delete, data: { confirm: 'Are you sure?' }, :style => "color:red;"%>
 	    		</P>
+	    		<% end %>
 
 	    		<body>
        

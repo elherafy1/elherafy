@@ -9,6 +9,7 @@ class ElherafyController < ApplicationController
 	end
 
 	def about
+		
 	end
 
 	def mabalat

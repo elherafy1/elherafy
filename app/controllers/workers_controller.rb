@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class WorkersController < ApplicationController
   #skip_before_filter :authenticate_admin! , [:show, :index] 
   before_action :set_worker, only: [:show, :edit, :update, :destroy]
@@ -35,7 +36,7 @@ class WorkersController < ApplicationController
     respond_to do |format|
       if @worker.save
         
-        format.html { redirect_to @worker, notice: 'Worker was successfully created.' }
+        format.html { redirect_to @worker, notice: 'تمت العملية بنجاح' }
         format.json { render :show, status: :created, location: @worker }
       else
         @worker.reviews.build if @worker.reviews.empty?
@@ -50,7 +51,7 @@ class WorkersController < ApplicationController
   def update
     respond_to do |format|
       if @worker.update(worker_params)
-        format.html { redirect_to @worker, notice: 'Worker was successfully updated.' }
+        format.html { redirect_to @worker, notice: 'تمت العملية بنجاح' }
         format.json { render :show, status: :ok, location: @worker }
       else
         format.html { render :edit }
@@ -64,7 +65,7 @@ class WorkersController < ApplicationController
   def destroy
     @worker.destroy
     respond_to do |format|
-      format.html { redirect_to workers_url, notice: 'Worker was successfully destroyed.' }
+      format.html { redirect_to workers_url, notice: 'تمت العملية بنجاح' }
       format.json { head :no_content }
     end
   end

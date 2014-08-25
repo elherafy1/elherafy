@@ -8,12 +8,17 @@
 
       <!-- Indicators -->
       <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <% i = -1 %>
+        <% @jobs.each do |job| %>
+        <% if !job.workers.empty? %>
+        <li data-target="#myCarousel" data-slide-to="<%=i+1%>" class="active"></li>
+        <% end %>
+        <% end %>
       </ol>
       <div class="carousel-inner" role="listbox">
         <% @jobs.each do |job| %>
+        <% if !job.workers.empty? %>
+
         <div class="item <%= 'active' if job == Job.first %>">
 
           
@@ -38,11 +43,12 @@
               <%= render 'elherafy/home', :worker => Job.max_mabalat(job.name)%>
               </p><br>              
               <p></p>
-              <p><strong style="font-size:30px;">مبلط</strong></p>
+              <p><strong style="font-size:30px;"><%=job.name%></strong></p>
               <p><a <%= link_to 'مزيد من المعلومات', Job.max_mabalat(job.name) , :style => "color:black;", :class => "btn btn-primary"%></a></p>
             </div>
           </div>
         </div>
+                <% end %>
         <% end %>  
       </div>
 
@@ -63,7 +69,7 @@
 
 <% @jobs.each do |job| %>
 <div class="col-sm-4">
-      <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"><%= job.name %></li>
+      <li class="list-group-item list-group-item-info" style="font-size:35px;"  align="center" dir="rtl"><%= job.name %>: <%= job.workers.count %> عامل</li>
 
     <%= link_to (image_tag job.picture, :height=>"300", :style => "width:100%"), job %>
 </div>

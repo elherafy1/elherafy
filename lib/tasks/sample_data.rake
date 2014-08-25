@@ -1,11 +1,12 @@
+#encoding: UTF-8
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    review= Review.create({:price => 4, :clean => 3, :quilty => 2, :disicpline => 1, :treatment => 3})
-    admin =  Worker.new(name: "",
-                    area: "",
-                    status: "",
-                    phone: "",
+    review = Review.create({:price => 4, :clean => 3, :quilty => 2, :disicpline => 1, :treatment => 3})
+    admin =  Worker.new(name: "الاسم",
+                    area: "المكان",
+                    status: "الحاله",
+                    phone: "الهاتف",
                     kind: "")
     admin.reviews<<review
     admin.save
@@ -13,13 +14,13 @@ namespace :db do
       50.times do |n|
         #review= Review.create(4,3,2,1,3)
         name = Faker::Name.name
-        area = ['',''].sample
-        status = ['',''].sample
+        area = ['القاهرة','الجيزة'].sample
+        status = ['متاح','مشغول'].sample
         phone = Faker::PhoneNumber.phone_number
         kind = ['', '', ''].sample
           admin.reviews<<review
           admin.save
-        review= Review.create({:price => 4, :clean => 3, :quilty => 2, :disicpline => 1, :treatment => 3})
+        review= Review.create({:price => 4, :clean => 3, :quilty => 2, :disicpline => 1, :treatment => 3}, client_name: name , client_phone: phone , client_email: email , client_addres: addres comment:comment)
         worker=Worker.new(name: name, area: area, status: status, phone: phone, kind: kind)
         worker.reviews<<review
         worker.save

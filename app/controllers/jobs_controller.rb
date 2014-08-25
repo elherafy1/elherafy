@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class JobsController < ApplicationController
 	before_filter :authenticate_admin! , :except => [:show, :index]
 
@@ -11,7 +12,7 @@ class JobsController < ApplicationController
 	    respond_to do |format|
 	      if @job.save
 	        
-	        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+	        format.html { redirect_to @job, notice: 'تمت العملية بنجاح' }
 	        format.json { render :show, status: :created, location: @job }
 	      else
 	        format.html { render :new }
@@ -28,7 +29,7 @@ class JobsController < ApplicationController
   		@job = Job.find(params[:id])
     	respond_to do |format|
 	      	if @job.update(job_params)
-	        	format.html { redirect_to @job, notice: 'Job was successfully updated.' }
+	        	format.html { redirect_to @job, notice: 'تمت العملية بنجاح' }
 	        	format.json { render :show, status: :ok, location: @job }
 	      	else
 	        	format.html { render :edit }
@@ -49,7 +50,7 @@ class JobsController < ApplicationController
   		@job = Job.find(params[:id])
 	    @job.destroy
 	    respond_to do |format|
-	      format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
+	      format.html { redirect_to jobs_url, notice: 'تمت العملية بنجاح' }
 	      format.json { head :no_content }
     end
   end

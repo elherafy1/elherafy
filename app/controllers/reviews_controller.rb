@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class ReviewsController < ApplicationController
 
 	before_filter :set_worker
@@ -16,7 +17,7 @@ class ReviewsController < ApplicationController
 
 		respond_to do |format|
 			if @review.save
-				format.html { redirect_to @worker, notice: 'Review was sent.' }
+				format.html { redirect_to @worker, notice: 'تمت العملية بنجاح' }
 			else
 				format.html { render :new }
 			end
@@ -31,7 +32,7 @@ class ReviewsController < ApplicationController
 		@review = @worker.reviews.find(params[:id])
     respond_to do |format|
       if @review.update(review_params)
-        format.html { redirect_to worker_reviews_path(@worker), notice: 'review was successfully updated.' }
+        format.html { redirect_to worker_reviews_path(@worker), notice: 'تمت العملية بنجاح' }
         format.json { render :show, status: :ok, location: @worker }
       else
         format.html { render :edit }
@@ -43,7 +44,7 @@ class ReviewsController < ApplicationController
 	def destroy
 		@review.destroy
 		respond_to do |format|
-		  format.html { redirect_to worker_reviews_path(@worker) , notice: 'review was successfully destroyed.' }
+		  format.html { redirect_to worker_reviews_path(@worker) , notice: 'تمت العملية بنجاح' }
 		  format.json { head :no_content }		
 		end
 	end

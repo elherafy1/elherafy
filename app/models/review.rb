@@ -5,9 +5,9 @@ class Review < ActiveRecord::Base
 	validates :disicpline, :presence => true, :if => :enable_strict
 	validates :treatment, :presence => true, :if => :enable_strict
 
-	#validates :client_name, :presence => true, :if => :enable_strict
-	#validates :client_phone, :presence => true, :if => :enable_strict
-	#validates :client_email, :presence => true, :if => :enable_strict
+	validates :client_name, :presence => true, :if => :enable_strict
+	validates :client_phone, :presence => true, :if => :enable_strict
+	validates :client_email, :presence => true, :if => :enable_strict
 
 	
 	belongs_to :worker
