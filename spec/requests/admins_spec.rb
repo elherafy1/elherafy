@@ -45,7 +45,7 @@ RSpec.describe "Admins", :type => :request do
 				fill_in 'worker_name', with: new_name
 				fill_in 'worker_area', with: new_area
 				select 'مشغول', from:'worker_status'
-				select 'نجار', from:'worker_kind'
+
 			    click_button "save"
 			end
 

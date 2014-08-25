@@ -61,9 +61,9 @@ let!(:admin) {FactoryGirl.create(:admin) }
 
     describe "with invalid info" do
       before { click_button 'save'}
-      specify { response.should redirect_to(@jobs)}
+      #specify { response.should redirect_to(@workers)}
              it "should have title" do
-        expect(page).to have_content('بيانات المهنه')
+        expect(page).to have_content('بيانات العامل')
          end
        end
 
@@ -79,7 +79,7 @@ let!(:admin) {FactoryGirl.create(:admin) }
             fill_in "Name",   with: new_name
             fill_in "Image",   with: new_image
 
-            click_button 'save_button'
+            click_button 'save'
         end
     
 
@@ -89,22 +89,22 @@ let!(:admin) {FactoryGirl.create(:admin) }
      describe "create" do
 
       before do
-        visit new_job_path(@job)
-                page.should have_content('اسم_المهنه')
+        visit new_worker_path(@worker)
+                page.should have_content('إضافة عامل')
 
       end
 
       describe "page" do
           
-            it{ page.should have_content('إضافة مهنه')}
-            it{ page.should have_button('save_job')}
+            it{ page.should have_content('إضافة عامل')}
+            it{ page.should have_button('save_worker')}
         end
 
     describe "with invalid info" do
-      before { click_button 'save_job'}
-       specify { response.should redirect_to(@jobs)}
+      before { click_button 'save_worker'}
+      # specify { response.should redirect_to(@jobs)}
        it "should have title" do
-        expect(page).to have_content('بيانات المهنه')
+        expect(page).to have_content('إضافة عامل')
          end
        end
 
@@ -120,7 +120,7 @@ let!(:admin) {FactoryGirl.create(:admin) }
             fill_in "Name",   with: new_name
             fill_in "Image",   with: new_image
 
-            click_button 'save_job'
+            click_button 'save_worker'
         end
     
 
@@ -128,25 +128,44 @@ let!(:admin) {FactoryGirl.create(:admin) }
   end
 
        describe "update" do
+        let!(:admin) {FactoryGirl.create(:admin) }
 
-      before do
-        visit edit_job_path(@job)
-                page.should have_content('اسم_المهنه')
+     before do
+                  @review= FactoryGirl.create(:review)
+    @review1= FactoryGirl.create(:review)
+    @review2= FactoryGirl.create(:review)
+    @review3= FactoryGirl.create(:review)
+    @worker = FactoryGirl.build(:worker)
+    @mabalat = FactoryGirl.build(:mabalat)
+    @naggar = FactoryGirl.build(:naggar)
+    @sabak = FactoryGirl.build(:sabak)
+    @worker.reviews<<@review
+    @worker.save
+          @mabalat.reviews<<@review1
+          @mabalat.save
+          @naggar.reviews<<@review2
+          @naggar.save
+          @sabak.reviews<<@review3
+          @sabak.save
+      sign_in admin
+        visit edit_worker_path(@worker)
+                page.should have_content('تحديث الملف الشخصي للعامل')
 
       end
 
       describe "page" do
-              it{ page.should have_content('إضافة مهنه')}
-              it{ page.should have_button('save_button')}
+          
+            it{ page.should have_content('تحديث الملف الشخصي للعامل')}
+            it{ page.should have_button('save')}
         end
 
     describe "with invalid info" do
-         before { click_button 'save_button'}
-             specify { response.should redirect_to(@jobs)}
+      before { click_button 'save'}
+     # specify { response.should redirect_to(@workers)}
              it "should have title" do
-             expect(page).to have_content('بيانات المهنه')
-              end
-            end
+        expect(page).to have_content('بيانات العامل')
+         end
+       end
 
     end
 
@@ -160,7 +179,7 @@ let!(:admin) {FactoryGirl.create(:admin) }
             fill_in "Name",   with: new_name
             fill_in "Image",   with: new_image
 
-            click_button 'save_job'
+            click_button 'save'
         end
     
 

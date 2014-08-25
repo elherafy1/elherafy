@@ -14,20 +14,21 @@
       </ol>
       <div class="carousel-inner" role="listbox">
         <% @jobs.each do |job| %>
-        <div class="item <%= 'active' if job == Job.first %>">
+        <% if !job.workers.empty? %>
+        <div class="item <%= 'active' if job == Job.has_workers.first %>">
 
           
 
           <img src="data:image/gif;base64,R0lGODlhAQABAIAAAGZmZgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-          <h1><%= Job.max_mabalat(job.name).name %></h1>
+          <h1><%= job.max_mabalat.name %></h1>
 
-              <% if Job.max_mabalat(job.name).average_rate > 20 %>
+              <% if job.max_mabalat.average_rate > 20 %>
                 <td><img src="http://www.clker.com/cliparts/Z/X/M/T/C/s/led-circle-green-md.png" width="80" height="80"></td>
-              <% elsif Job.max_mabalat(job.name).average_rate > 15 && Job.max_mabalat(job.name).average_rate <= 20%>
+              <% elsif job.max_mabalat.average_rate > 15 && job.max_mabalat.average_rate <= 20%>
                 <td><img src="http://www.clker.com/cliparts/z/Y/Q/v/w/e/led-circle-yellow-md.png" width="80" height="80"></td>
-              <% elsif Job.max_mabalat(job.name).average_rate > 10 && Job.max_mabalat(job.name).average_rate <= 15 %>
+              <% elsif job.max_mabalat.average_rate > 10 && job.max_mabalat.average_rate <= 15 %>
                 <td><img src="http://www.clker.com/cliparts/6/y/a/i/z/9/led-circle-orange-md.png" width="80" height="80"></td>
               <% else %>
                 <td><img src="http://www.clker.com/cliparts/T/t/g/p/t/5/led-circle-red-md.png" width="80" height="80"></td>            
@@ -43,6 +44,7 @@
             </div>
           </div>
         </div>
+        <% end %>
         <% end %>  
       </div>
 
