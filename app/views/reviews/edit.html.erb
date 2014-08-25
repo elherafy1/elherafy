@@ -1,0 +1,146 @@
+<div class="jumbotron">
+      <div class="container">
+        <div class="row">
+        	<title>Review</title>
+        	<h1 dir="rtl" lang="ar"  style = "color:green;">تعديل التقييم</h1><br>
+
+	<%= form_for([@worker, @review]) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this worker from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li><br>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+		
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :quilty, 1 %><i></i>
+		<%= f.radio_button :quilty, 2 %><i></i>
+		<%= f.radio_button :quilty, 3 %><i></i>
+		<%= f.radio_button :quilty, 4 %><i></i>
+		<%= f.radio_button :quilty, 5 %><i></i>
+	</span>
+	</div>
+
+	<p dir="rtl" lang="ar">
+		<strong class="choice">تقييم الجودة</strong>
+	</p>
+<li class="divider"></li>		
+				<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :disicpline, 1 %><i></i>
+		<%= f.radio_button :disicpline, 2 %><i></i>
+		<%= f.radio_button :disicpline, 3 %><i></i>
+		<%= f.radio_button :disicpline, 4 %><i></i>
+		<%= f.radio_button :disicpline, 5 %><i></i>
+	</span>
+	</div>
+	<p dir="rtl" lang="ar">
+
+		<strong class="choice">تقييم الانضباط</strong>
+	</p>
+		<p>
+<li class="divider"></li>
+		
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :treatment, 1 %><i></i>
+		<%= f.radio_button :treatment, 2 %><i></i>
+		<%= f.radio_button :treatment, 3 %><i></i>
+		<%= f.radio_button :treatment, 4 %><i></i>
+		<%= f.radio_button :treatment, 5 %><i></i>
+	</span>
+	</div>
+	<p dir="rtl" lang="ar">
+		<strong class="choice">تقييم المعاملة</strong>
+		
+	</p>
+<li class="divider"></li>
+	
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :clean, 1 %><i></i>
+		<%= f.radio_button :clean, 2 %><i></i>
+		<%= f.radio_button :clean, 3 %><i></i>
+		<%= f.radio_button :clean, 4 %><i></i>
+		<%= f.radio_button :clean, 5 %><i></i>
+	</span>
+	</div>
+	<p dir="rtl" lang="ar">
+		<strong class="choice">تقييم النظافة</strong>
+		
+	</p>
+<li class="divider"></li>
+		
+		<div class="col-sm-7">
+	<span class="star-rating">
+		<%= f.radio_button :price, 1 %><i></i>
+		<%= f.radio_button :price, 2 %><i></i>
+		<%= f.radio_button :price, 3 %><i></i>
+		<%= f.radio_button :price, 4 %><i></i>
+		<%= f.radio_button :price, 5 %><i></i>
+	</span>
+	</div>
+	<p dir="rtl" lang="ar">
+		
+		<strong class="choice">تقييم السعر</strong>
+		
+	</p><br>
+
+
+
+    <p>
+    <div class="field">
+		<div class="col-sm-12">
+			<p dir="rtl" lang="ar"  style = "color:green;">
+    		<strong class="choice">معلومات حول العميل</strong>
+    	</p><br>
+    		<p dir="rtl" lang="ar" >
+			<%= f.label :اسم_العميل %>
+    		<%= f.text_field :client_name%><br>
+    		</p>
+    			<p dir="rtl" lang="ar" >
+			<%= f.label :البريد_الإلكتروني_للعميل %>
+    		<%= f.text_field :client_email%><br>
+    		</p>
+    			<p dir="rtl" lang="ar" >
+			<%= f.label :هاتف_العميل %>
+    		<%= f.text_field :client_phone%><br>
+    		</p>
+    			<p dir="rtl" lang="ar" >
+			<%= f.label :عنوان_العميل %>
+    		<%= f.text_field :client_addres%><br>
+    		</p>
+<li class="divider"></li>
+			<p dir="rtl" lang="ar">	
+    		<strong class="choice">إضافة تعليق</strong>
+    	</p>
+
+<p dir="rtl" lang="ar">	
+	<div class="field">
+		<div class="col-sm-12 ">
+    		<%= f.text_area :comment , :class =>"form-control"%><br>
+
+    		<p dir="rtl" lang="ar">
+		<%= f.submit  "تعديل التقييم", :class => "btn btn-primary" %>
+			</p>
+
+    	</div>
+
+		
+    	
+    </div>
+</p><br>
+
+    	</div>
+    	
+    </p>
+</div>
+</div>
+
+<% end %> 

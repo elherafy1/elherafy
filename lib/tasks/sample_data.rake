@@ -2,21 +2,21 @@ namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
     review= Review.create({:price => 4, :clean => 3, :quilty => 2, :disicpline => 1, :treatment => 3})
-    admin =  Worker.new(name: "My Name",
-                    area: "My Area",
-                    status: "My Status",
-                    phone: "My Phone",
-                    kind: "My Kind")
+    admin =  Worker.new(name: "",
+                    area: "",
+                    status: "",
+                    phone: "",
+                    kind: "")
     admin.reviews<<review
     admin.save
     
       50.times do |n|
         #review= Review.create(4,3,2,1,3)
         name = Faker::Name.name
-        area = ['Cairo','Giza'].sample
-        status = ['busy','available'].sample
+        area = ['',''].sample
+        status = ['',''].sample
         phone = Faker::PhoneNumber.phone_number
-        kind = ['naggar', 'sabak', 'mabalat'].sample
+        kind = ['', '', ''].sample
           admin.reviews<<review
           admin.save
         review= Review.create({:price => 4, :clean => 3, :quilty => 2, :disicpline => 1, :treatment => 3})

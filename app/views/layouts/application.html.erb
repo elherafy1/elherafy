@@ -36,7 +36,8 @@
 						         خدمات المشرف<b class="caret"></b>
 					            </a>
 					            <ul class="dropdown-menu">
-					            	<li align="center"><%= link_to "اضافة عامل", new_worker_path%></li>
+					            	<li align="center"><%= link_to "اضافة مهنه", new_job_path %></li>
+					            	<li align="center"><%= link_to "اضافة عامل", new_worker_path %></li>
 					            	<li class="divider"></li>
 							    	<li align="center"><%= link_to "تسجيل الخروج", destroy_admin_session_path , method: "delete" %></li>
 							    </ul>
@@ -51,6 +52,7 @@
 						          الخدمات <b class="caret"></b>
 					            </a>
 					            <ul class="dropdown-menu">
+					            	<li align="center"><%= link_to "المهنه", jobs_path %></li>
 					            	<li align="center"><%= link_to "العمال", workers_path %></li>
 					            	<li class="divider"></li>
 						            <li align="center"><%= link_to "مبلط", mabalat_path(:worker_type => 'مبلط') %> </li>

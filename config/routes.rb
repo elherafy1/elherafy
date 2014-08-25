@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   devise_for :admins
+  resources :jobs
   resources :workers do
     resources :reviews
     resources :comments
@@ -9,8 +10,6 @@ Rails.application.routes.draw do
   
 
   root 'elherafy#home'
-  get '/order' => "elherafy#order"
-  
   get "reviews/new"
   post "reviews/create"
   get "comments/new"
