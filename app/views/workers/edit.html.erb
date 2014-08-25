@@ -24,8 +24,8 @@
                   <%= f.select :status, options_for_select([['متاح','متاح'],['مشغول', 'مشغول']])%>
                 </div>
                 <div class="field">
-                  <%= f.label :النوع_العمل %><br>
-                  <%= f.select :kind, options_for_select([['نجار','نجار'],['مبلط', 'مبلط'],['سباك', 'سباك']])%>
+                  <%= f.label :نوع_العمل %><br>
+                  <%= f.select :job_id, Job.all.collect{|j| [j.name, j.id]}%>
                 </div>
                 
                 <%= f.submit  "تحديث", :class => "btn btn-primary" %>

@@ -14,7 +14,6 @@ class JobsController < ApplicationController
 	        format.html { redirect_to @job, notice: 'Job was successfully created.' }
 	        format.json { render :show, status: :created, location: @job }
 	      else
-	        @job.reviews.build if @job.reviews.empty?
 	        format.html { render :new }
 	        format.json { render json: @job.errors, status: :unprocessable_entity }
 	      end
